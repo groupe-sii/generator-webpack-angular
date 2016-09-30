@@ -2,7 +2,11 @@
   "name": "@groupe-sii/generator-webpack-angular",
   "version": "0.0.1",
   "description": "Yeoman generator for creating AngularJS apps with Webpack",
-  "keywords": ["yeoman-generator", "angular", "webpack"],
+  "keywords": [
+    "yeoman-generator",
+    "angular",
+    "webpack"
+  ],
   "license": "MIT",
   "author": "SII",
   "contributors": [
@@ -17,7 +21,9 @@
     "url": "https://github.com/groupe-sii/generator-webpack-angular.git"
   },
   "dependencies": {
-    "yeoman-generator": "^0.24.1"
+    "chalk": "^1.1.3",
+    "yeoman-generator": "^0.24.1",
+    "yosay": "^1.2.0"
   },
   "engines": {
     "node": ">=4.6.0"
