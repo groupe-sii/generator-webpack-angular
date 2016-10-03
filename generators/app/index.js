@@ -84,8 +84,12 @@ module.exports = class AppGenerator extends Base {
       configFiles () {
         this.fs.copyTpl(
           this.templatePath('_.babelrc'),
-          this.destinationPath('.babelrc'),
-          this.props
+          this.destinationPath('.babelrc')
+        );
+
+        this.fs.copyTpl(
+          this.templatePath('_.editorconfig'),
+          this.destinationPath('.editorconfig')
         );
       },
 
