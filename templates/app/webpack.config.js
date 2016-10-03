@@ -1,12 +1,13 @@
 'use strict';
 
 const path = require('path');
+const webpack = require('webpack');
 const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 let TARGET = process.env.npm_lifecycle_event;
-
-console.log(TARGET);
 
 let common = {
 
@@ -41,7 +42,7 @@ let common = {
 // Development
 if (TARGET === 'start') {
   module.exports = merge(common, {
-    
+
   });
 }
 
@@ -53,13 +54,22 @@ if (TARGET === 'build') {
       publicPath: '/',
       filename: '[name].[hash].js',
       chunkFilename: '[name].[hash].js'
-    }
+    },
+
+    plugins: [
+      new webpack.NoErrorsPlugin(),
+      new webpack.optimize.DedupePlugin(),
+      new webpack.optimize.UglifyJsPlugin(),
+      new CopyWebpackPlugin([{
+        from: __dirname + '/src/public'
+      }])
+    ],
   });
 }
 
 // Test
 if (TARGET === 'test') {
   module.exports = merge(common, {
-    
+
   });
 }
