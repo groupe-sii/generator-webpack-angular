@@ -6,7 +6,8 @@ const Base  = require('yeoman-generator').Base;
 const yosay = require('yosay');
 const chalk = require('chalk');
 
-const pkg   = require('../../package.json');
+const Prompt = require('./prompt');
+const pkg = require('../../package.json');
 
 module.exports = class AppGenerator extends Base {
 
@@ -68,8 +69,8 @@ module.exports = class AppGenerator extends Base {
   /**
    * Prompt the user for options.
    */
-  get prompting () {
-
+  prompting () {
+    return Prompt.questions(this);
   }
 
   /**
@@ -139,10 +140,41 @@ module.exports = class AppGenerator extends Base {
        */
       src () {
         this.fs.copyTpl(
-          this.templatePath('src'),
-          this.destinationPath('src'),
+          this.templatePath('src/app'),
+          this.destinationPath('src/app'),
           this.props
         );
+
+        this.fs.copyTpl(
+          this.templatePath('src/public'),
+          this.destinationPath('src/public'),
+          this.props
+        );
+      },
+
+      /**
+       * Write styles.
+       */
+      styles () {
+        switch (this.props.cssPreprocessor) {
+          case 'sass':
+            this.fs.copyTpl(
+              this.templatePath('src/styles-sass'),
+              this.destinationPath('src/styles')
+            );
+            break;
+          case 'less':
+            this.fs.copyTpl(
+              this.templatePath('src/styles-less'),
+              this.destinationPath('src/styles')
+            );
+            break;
+          default:
+            this.fs.copyTpl(
+              this.templatePath('src/styles'),
+              this.destinationPath('src/styles')
+            );
+        }
       }
     };
   }
