@@ -15,12 +15,24 @@
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.5",
     "babel-preset-es2015": "^6.16.0",
+    "css-loader": "^0.25.0",
     "copy-webpack-plugin": "^3.0.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^2.7.1",
+<% if (cssPreprocessor === 'less') { -%>
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+<% } -%>
     "ng-annotate-loader": "^0.2.0",
+<% if (cssPreprocessor === 'sass') { -%>
+    "node-sass": "^3.10.1",
+<% } -%>
     "raw-loader": "^0.5.1",
     "rimraf": "^2.5.1",
+<% if (cssPreprocessor === 'sass') { -%>
+    "sass-loader": "^4.0.2",
+<% } -%>
+    "style-loader": "^0.13.1",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.1",
     "webpack-merge": "^0.14.1"

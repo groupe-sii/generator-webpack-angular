@@ -23,7 +23,19 @@ let common = {
     {
       test: /\.html$/,
       loader: 'raw'
-    }]
+    }<% if (cssPreprocessor === 'sass') { %>,
+    {
+      test: /\.scss$/,
+      loaders: ['style', 'css', 'sass']
+    }<% } else if (cssPreprocessor === 'less') { %>,
+    {
+      test: /\.less$/,
+      loaders: ['style', 'css', 'less']
+    }<% } else { %>,
+    {
+      test: /\.css$/,
+      loaders: ['style', 'css']
+    }<% } %>]
   },
 
   plugins: [
