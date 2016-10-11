@@ -23,19 +23,7 @@ let common = {
     {
       test: /\.html$/,
       loader: 'raw'
-    }<% if (cssPreprocessor === 'sass') { %>,
-    {
-      test: /\.scss$/,
-      loaders: ['style', 'css', 'sass']
-    }<% } else if (cssPreprocessor === 'less') { %>,
-    {
-      test: /\.less$/,
-      loaders: ['style', 'css', 'less']
-    }<% } else { %>,
-    {
-      test: /\.css$/,
-      loaders: ['style', 'css']
-    }<% } %>]
+    }]
   },
 
   plugins: [
@@ -53,19 +41,58 @@ let common = {
 
 // Development
 if (TARGET === 'start') {
-  module.exports = merge(common, {
-
+  module.exports = merge.smart(common, {
+    module: {
+      loaders: [{
+        test: /\.js$/,
+        loaders: ['ng-annotate', 'babel'],
+        exclude: /node_modules/
+      },
+      {
+        test: /\.html$/,
+        loader: 'raw'
+      }<% if (cssPreprocessor === 'sass') { %>,
+      {
+        test: /\.scss$/,
+        loaders: ['style-loader', 'css-loader', 'sass-loader']
+      }<% } else if (cssPreprocessor === 'less') { %>,
+      {
+        test: /\.less$/,
+        loaders: ['style-loader', 'css-loader', 'less-loader']
+      }<% } else { %>,
+      {
+        test: /\.css$/,
+        loaders: ['style-loader', 'css-loader']
+      }<% } %>]
+    }
   });
 }
 
 // Production
 if (TARGET === 'build') {
-  module.exports = merge(common, {
+  module.exports = merge.smart(common, {
     output: {
       path: __dirname + '/dist',
       publicPath: '/',
       filename: '[name].[hash].js',
       chunkFilename: '[name].[hash].js'
+    },
+
+    module: {
+      loaders: [<% if (cssPreprocessor === 'sass') { %>
+        {
+          test: /\.scss$/,
+          loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader')
+        }<% } else if (cssPreprocessor === 'less') { %>
+        {
+          test: /\.less$/,
+          loader: ExtractTextPlugin.extract('style-loader', 'css-loader!less-loader')
+        }<% } else { %>
+        {
+          test: /\.css$/,
+          loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
+        }<% } %>
+      ]
     },
 
     plugins: [
@@ -74,14 +101,15 @@ if (TARGET === 'build') {
       new webpack.optimize.UglifyJsPlugin(),
       new CopyWebpackPlugin([{
         from: __dirname + '/src/public'
-      }])
+      }]),
+      new ExtractTextPlugin('[name].[hash].css')
     ],
   });
 }
 
 // Test
 if (TARGET === 'test') {
-  module.exports = merge(common, {
+  module.exports = merge.smart(common, {
 
   });
 }
