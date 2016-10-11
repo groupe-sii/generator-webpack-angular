@@ -1,10 +1,10 @@
-# BYS-front
+# SASS
 
-## SASS
+Sources: 
 
-Préconisations https://sass-guidelin.es/?utm_source=CSS-Weekly&utm_campaign=Issue-145&utm_medium=RSS#architecture
+[https://sass-guidelin.es](https://sass-guidelin.es/?utm_source=CSS-Weekly&utm_campaign=Issue-145&utm_medium=RSS#architecture)
 
-### MAIN FILE
+## MAIN FILE
 
 The main file (usually labelled main.scss) should be the only Sass file from the whole code base not to begin with an underscore. This file should not contain anything but @import and comments.
 
