@@ -23,6 +23,10 @@ let common = {
     {
       test: /\.html$/,
       loader: 'raw'
+    },
+    {
+      test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
+      loader: 'file'
     }]
   },
 
@@ -43,15 +47,7 @@ let common = {
 if (TARGET === 'start') {
   module.exports = merge.smart(common, {
     module: {
-      loaders: [{
-        test: /\.js$/,
-        loaders: ['ng-annotate', 'babel'],
-        exclude: /node_modules/
-      },
-      {
-        test: /\.html$/,
-        loader: 'raw'
-      }<% if (cssPreprocessor === 'sass') { %>,
+      loaders: [<% if (cssPreprocessor === 'sass') { %>
       {
         test: /\.scss$/,
         loaders: ['style-loader', 'css-loader', 'sass-loader']
