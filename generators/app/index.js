@@ -1,8 +1,8 @@
 'use strict';
 
-const _     = require('underscore.string');
-const path  = require('path');
-const Base  = require('yeoman-generator').Base;
+const _ = require('underscore.string');
+const path = require('path');
+const Base = require('yeoman-generator').Base;
 const yosay = require('yosay');
 const chalk = require('chalk');
 
@@ -22,9 +22,7 @@ module.exports = class AppGenerator extends Base {
       required: false
     });
 
-    this.props = {
-      _: _
-    };
+    this.props = {_};
   }
 
   /**
@@ -194,4 +192,4 @@ module.exports = class AppGenerator extends Base {
     this.log(`- ${chalk.yellow.bold('npm start')} to start dev server on your source files with live reload`);
     this.log(`- ${chalk.yellow.bold('npm run build')} to build an optimized version of your application in folder /dist`);
   }
-}
+};

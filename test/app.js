@@ -8,9 +8,8 @@ const assert = require('yeoman-assert');
  * Test app generator.
  */
 describe('app', () => {
-
   describe('default settings', () => {
-    before((done) => {
+    before(done => {
       this.generator = helpers
         .run(path.join(__dirname, '../generators/app'))
         .toPromise()
@@ -28,8 +27,7 @@ describe('app', () => {
   });
 
   describe('when using less', () => {
-
-    before((done) => {
+    before(done => {
       this.generator = helpers
         .run(path.join(__dirname, '../generators/app'))
         .withPrompts({
@@ -43,12 +41,10 @@ describe('app', () => {
       assert.file('src/styles/main.less');
       assert.fileContent('src/styles/main.less', '');
     });
-
   });
 
   describe('when using css', () => {
-
-    before((done) => {
+    before(done => {
       this.generator = helpers
         .run(path.join(__dirname, '../generators/app'))
         .withPrompts({
@@ -62,6 +58,5 @@ describe('app', () => {
       assert.file('src/styles/main.css');
       assert.fileContent('src/styles/main.css', '');
     });
-
   });
 });

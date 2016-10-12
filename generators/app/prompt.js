@@ -29,7 +29,7 @@ module.exports = class Prompt {
           value: 'css'
         }
       ]
-    }]).then((answers) => {
+    }]).then(answers => {
       generator.props.cssPreprocessor = answers.cssPreprocessor;
     });
   }
