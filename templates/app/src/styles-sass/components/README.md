@@ -1,23 +1,17 @@
-# SASS
+# Components
 
-Sources: 
+For smaller components, there is the `components/` folder. While `layout/` is macro (defining the global wireframe), `components/` is more focused on widgets. It contains all kind of specific modules like a slider, a loader, a widget, and basically anything along those lines. There are usually a lot of files in `components/` since the whole site/application should be mostly composed of tiny modules.
 
-[https://sass-guidelin.es](https://sass-guidelin.es/?utm_source=CSS-Weekly&utm_campaign=Issue-145&utm_medium=RSS#architecture)
+* `_media.scss`
+* `_carousel.scss`
+* `_thumbnails.scss`
 
-## COMPONENTS FILE
+The `components/` folder might also be called modules/, depending on what you prefer.
 
-For smaller components, there is the components/ folder. While layout/ is macro (defining the global wireframe), components/ is more focused on widgets. It contains all kind of specific modules like a slider, a loader, a widget, and basically anything along those lines. There are usually a lot of files in components/ since the whole site/application should be mostly composed of tiny modules.
-
-* _media.scss
-* _carousel.scss
-* _thumbnails.scss
-
-The components/ folder might also be called modules/, depending on what you prefer.
-
-### Structure
+## Structure
 
 ```
-sass/
+styles/
 |
 |– components/
 |   |– _buttons.scss      # Buttons
@@ -26,3 +20,7 @@ sass/
 |   |– _dropdown.scss     # Dropdown
 |   …                     # Etc.
 ```
+
+## Source
+
+[https://sass-guidelin.es](https://sass-guidelin.es/?utm_source=CSS-Weekly&utm_campaign=Issue-145&utm_medium=RSS#architecture)

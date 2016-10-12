@@ -2,19 +2,19 @@
 
 This `themes/` folder contains themes files.
 
-* `_theme.scss`
-* `_admin.scss`
+* `_theme.less`
+* `_admin.less`
 
 This folder is very project-specific and is likely to be non-existent on many projects.
 
 ## Structure
 
 ```
-sass/
+styles/
 |
 |– themes/
-|   |– _theme.scss        # Default theme
-|   |– _admin.scss        # Admin theme
+|   |– _theme.less        # Default theme
+|   |– _admin.less        # Admin theme
 |   …                     # Etc.
 ```
 

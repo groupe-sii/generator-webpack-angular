@@ -1,26 +1,20 @@
-# SASS
+# Layout
 
-Sources: 
+The `layout/` folder contains everything that takes part in laying out the site or application. This folder could have stylesheets for the main parts of the site (header, footer, navigation, sidebar...), the grid system or even CSS styles for all the forms.
 
-[https://sass-guidelin.es](https://sass-guidelin.es/?utm_source=CSS-Weekly&utm_campaign=Issue-145&utm_medium=RSS#architecture)
+* `_grid.scss`
+* `_header.scss`
+* `_footer.scss`
+* `_sidebar.scss`
+* `_forms.scss`
+* `_navigation.scss`
 
-## LAYOUT FILE
+The `layout/` folder might also be called `partials/`, depending on what you prefer.
 
-The layout/ folder contains everything that takes part in laying out the site or application. This folder could have stylesheets for the main parts of the site (header, footer, navigation, sidebar…), the grid system or even CSS styles for all the forms.
-
-* _grid.scss
-* _header.scss
-* _footer.scss
-* _sidebar.scss
-* _forms.scss
-* _navigation.scss
-
-The layout/ folder might also be called partials/, depending on what you prefer.
-
-### Structure
+## Structure
 
 ```
-sass/
+styles/
 |
 |– layout/
 |   |– _navigation.scss   # Navigation
@@ -31,3 +25,7 @@ sass/
 |   |– _forms.scss        # Forms
 |   …                     # Etc.
 ```
+
+## Source
+
+[https://sass-guidelin.es](https://sass-guidelin.es/?utm_source=CSS-Weekly&utm_campaign=Issue-145&utm_medium=RSS#architecture)
