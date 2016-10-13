@@ -7,8 +7,13 @@
     "start": "webpack-dev-server --history-api-fallback --inline --progress --hot"
   },
   "dependencies": {
-    "angular": "^1.5.8",
-    "angular-aria": "^1.5.8"
+    "angular": "^1.5.8",<% if (ngAnimate) { %>
+    "angular-animate": "^1.5.8",<% } %>
+    "angular-aria": "^1.5.8"<% if (ngCookies) { %>,
+    "angular-cookies": "^1.5.8"<% } -%><% if (ngMessages) { %>,
+    "angular-messages": "^1.5.8"<% } -%><% if (ngSanitize) { %>,
+    "angular-sanitize": "^1.5.8"<% } -%><% if (ngTouch) { %>,
+    "angular-touch": "^1.5.8"<% } %>
   },
   "devDependencies": {
     "angular-mocks": "^1.5.8",

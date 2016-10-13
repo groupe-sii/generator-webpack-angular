@@ -10,6 +10,33 @@ module.exports = class Prompt {
    */
   static questions (generator) {
     return generator.prompt([{
+      type: 'checkbox',
+      name: 'ngModules',
+      message: 'What Angular modules do you want?',
+      store: true,
+      choices: [
+        {
+          name: 'ngAnimate',
+          value: 'ngAnimate'
+        },
+        {
+          name: 'ngCookies',
+          value: 'ngCookies'
+        },
+        {
+          name: 'ngTouch',
+          value: 'ngTouch'
+        },
+        {
+          name: 'ngSanitize',
+          value: 'ngSanitize'
+        },
+        {
+          name: 'ngMessages',
+          value: 'ngMessages'
+        }
+      ]
+    }, {
       type: 'list',
       name: 'cssPreprocessor',
       message: 'Which CSS preprocessor do you want?',
@@ -30,6 +57,14 @@ module.exports = class Prompt {
         }
       ]
     }]).then(answers => {
+      // Angular modules
+      generator.props.ngAnimate = answers.ngModules.includes('ngAnimate');
+      generator.props.ngCookies = answers.ngModules.includes('ngCookies');
+      generator.props.ngTouch = answers.ngModules.includes('ngTouch');
+      generator.props.ngSanitize = answers.ngModules.includes('ngSanitize');
+      generator.props.ngMessages = answers.ngModules.includes('ngMessages');
+
+      // CSS preprocessor
       generator.props.cssPreprocessor = answers.cssPreprocessor;
     });
   }
