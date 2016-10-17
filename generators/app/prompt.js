@@ -58,11 +58,11 @@ module.exports = class Prompt {
       ]
     }]).then(answers => {
       // Angular modules
-      generator.props.ngAnimate = answers.ngModules.includes('ngAnimate');
-      generator.props.ngCookies = answers.ngModules.includes('ngCookies');
-      generator.props.ngTouch = answers.ngModules.includes('ngTouch');
-      generator.props.ngSanitize = answers.ngModules.includes('ngSanitize');
-      generator.props.ngMessages = answers.ngModules.includes('ngMessages');
+      generator.props.ngAnimate = answers.ngModules && answers.ngModules.includes('ngAnimate');
+      generator.props.ngCookies = answers.ngModules && answers.ngModules.includes('ngCookies');
+      generator.props.ngTouch = answers.ngModules && answers.ngModules.includes('ngTouch');
+      generator.props.ngSanitize = answers.ngModules && answers.ngModules.includes('ngSanitize');
+      generator.props.ngMessages = answers.ngModules && answers.ngModules.includes('ngMessages');
 
       // CSS preprocessor
       generator.props.cssPreprocessor = answers.cssPreprocessor;
