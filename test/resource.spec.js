@@ -27,7 +27,6 @@ describe('resource', () => {
       assert.fileContent('src/app/app.js', 'import \'restangular\'');
       assert.fileContent('src/app/app.js', /angular\.module\([\s\S]*, [\s\S]*?restangular/);
     });
-
   });
 
   describe('when using ngResource', () => {
@@ -50,7 +49,5 @@ describe('resource', () => {
       assert.fileContent('src/app/app.js', 'import ngResource from \'angular-resource\'');
       assert.fileContent('src/app/app.js', /angular\.module\([\s\S]*, [\s\S]*?ngResource/);
     });
-
   });
-
 });
