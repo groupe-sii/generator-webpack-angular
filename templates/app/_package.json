@@ -13,7 +13,9 @@
     "angular-cookies": "^1.5.8"<% } -%><% if (ngMessages) { %>,
     "angular-messages": "^1.5.8"<% } -%><% if (ngSanitize) { %>,
     "angular-sanitize": "^1.5.8"<% } -%><% if (ngTouch) { %>,
-    "angular-touch": "^1.5.8"<% } %>
+    "angular-touch": "^1.5.8"<% } %><% if (resource === 'ngResource') { %>,
+    "angular-resource": "^1.5.8"<% } %><% if (resource === 'restangular') { %>,
+    "restangular": "^1.5.2"<% } %>
   },
   "devDependencies": {
     "angular-mocks": "^1.5.8",
