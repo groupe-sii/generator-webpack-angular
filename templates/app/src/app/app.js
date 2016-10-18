@@ -19,7 +19,8 @@ import ngTouch from 'angular-touch';
 import ngResource from 'angular-resource';
 <% } -%>
 <% if (resource === 'restangular') { -%>
-import restangular from 'restangular';
+import 'lodash';
+import 'restangular';
 <% } -%>
 
 <% if (cssPreprocessor === 'sass') { -%>
@@ -40,7 +41,7 @@ angular.module('app', [<% if (ngAnimate) { %>
   ngSanitize<% } -%><% if (ngTouch) { %>,
   ngTouch<% } -%><% if (resource === 'ngResource') { %>,
   ngResource<% } -%><% if (resource === 'restangular') { %>,
-  restangular<% } %>
+  'restangular'<% } %>
 ])
 .component('app', appComponent)
 .name;
