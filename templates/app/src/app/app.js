@@ -15,6 +15,7 @@ import ngSanitize from 'angular-sanitize';
 <% if (ngTouch) { -%>
 import ngTouch from 'angular-touch';
 <% } -%>
+import uiRouter from 'angular-ui-router';
 
 <% if (cssPreprocessor === 'sass') { -%>
 import '../styles/main.scss';
@@ -24,6 +25,8 @@ import '../styles/main.less';
 import '../styles/main.css';
 <% } -%>
 
+import appConfig from './app.config';
+import appRoute from './app.route';
 import appComponent from './app.component';
 
 angular.module('app', [<% if (ngAnimate) { %>
@@ -32,7 +35,10 @@ angular.module('app', [<% if (ngAnimate) { %>
   ngCookies<% } -%><% if (ngMessages) { %>,
   ngMessages<% } -%><% if (ngSanitize) { %>,
   ngSanitize<% } -%><% if (ngTouch) { %>,
-  ngTouch<% } %>
+  ngTouch<% } %>,
+  uiRouter
 ])
+.config(appConfig)
+.config(appRoute)
 .component('app', appComponent)
 .name;
