@@ -8,6 +8,7 @@ const assert = require('yeoman-assert');
  * Test app generator.
  */
 describe('app', () => {
+
   describe('default settings', () => {
     before(done => {
       this.generator = helpers
