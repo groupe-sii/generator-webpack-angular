@@ -15,6 +15,13 @@ import ngSanitize from 'angular-sanitize';
 <% if (ngTouch) { -%>
 import ngTouch from 'angular-touch';
 <% } -%>
+<% if (resource === 'ngResource') { -%>
+import ngResource from 'angular-resource';
+<% } -%>
+<% if (resource === 'restangular') { -%>
+import 'lodash';
+import 'restangular';
+<% } -%>
 
 <% if (cssPreprocessor === 'sass') { -%>
 import '../styles/main.scss';
@@ -32,7 +39,9 @@ angular.module('app', [<% if (ngAnimate) { %>
   ngCookies<% } -%><% if (ngMessages) { %>,
   ngMessages<% } -%><% if (ngSanitize) { %>,
   ngSanitize<% } -%><% if (ngTouch) { %>,
-  ngTouch<% } %>
+  ngTouch<% } -%><% if (resource === 'ngResource') { %>,
+  ngResource<% } -%><% if (resource === 'restangular') { %>,
+  'restangular'<% } %>
 ])
 .component('app', appComponent)
 .name;

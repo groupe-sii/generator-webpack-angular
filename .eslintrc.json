@@ -111,7 +111,6 @@
     "one-var-declaration-per-line": "error",
     "operator-assignment": ["error", "always"],
     "operator-linebreak": ["error", "after"],
-    "padded-blocks": ["error", "never"],
     "quote-props": ["error", "as-needed"],
     "quotes": ["error", "single", {
       "allowTemplateLiterals": true
