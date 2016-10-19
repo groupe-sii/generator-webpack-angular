@@ -25,6 +25,15 @@ describe('app', () => {
       assert.file('src/styles/main.scss');
       assert.fileContent('src/styles/main.scss', '');
     });
+
+    it('should add ui-router to the package.json', () => {
+      assert.fileContent('package.json', /"dependencies": {[^}]*"angular-ui-router": "\^[\w\.\-]+"/);
+    });
+
+    it('should import ui-router in the app modules', () => {
+      assert.fileContent('src/app/app.js', 'import uiRouter from \'angular-ui-router\';');
+      assert.fileContent('src/app/app.js', /angular\.module\([\s\S]*, [\s\S]*?uiRouter/);
+    });
   });
 
   describe('when using less', () => {
