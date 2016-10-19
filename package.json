@@ -10,7 +10,8 @@
   "license": "MIT",
   "author": "SII",
   "contributors": [
-    "Jérémie Ledentu <jledentu@gmail.com>"
+    "Jérémie Ledentu <jledentu@gmail.com>",
+    "Valentin Got <gotvalentin@gmail.com>"
   ],
   "files": [
     "generators/app"

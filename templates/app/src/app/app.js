@@ -16,6 +16,13 @@ import ngSanitize from 'angular-sanitize';
 import ngTouch from 'angular-touch';
 <% } -%>
 import uiRouter from 'angular-ui-router';
+<% if (resource === 'ngResource') { -%>
+import ngResource from 'angular-resource';
+<% } -%>
+<% if (resource === 'restangular') { -%>
+import 'lodash';
+import 'restangular';
+<% } -%>
 
 <% if (cssPreprocessor === 'sass') { -%>
 import '../styles/main.scss';
@@ -29,13 +36,29 @@ import appConfig from './app.config';
 import appRoute from './app.route';
 import appComponent from './app.component';
 
-angular.module('app', [<% if (ngAnimate) { %>
-  ngAnimate,<% } %>
-  ngAria<% if (ngCookies) { %>,
-  ngCookies<% } -%><% if (ngMessages) { %>,
-  ngMessages<% } -%><% if (ngSanitize) { %>,
-  ngSanitize<% } -%><% if (ngTouch) { %>,
-  ngTouch<% } %>,
+angular.module('app', [
+<% if (ngAnimate) { -%>
+  ngAnimate,
+<% } -%>
+  ngAria,
+<% if (ngCookies) { -%>
+  ngCookies,
+<% } -%>
+<% if (ngMessages) { -%>
+  ngMessages,
+<% } -%>
+<% if (ngSanitize) { -%>
+  ngSanitize,
+<% } -%>
+<% if (ngTouch) { -%>
+  ngTouch,
+<% } -%>
+<% if (resource === 'ngResource') { -%>
+  ngResource,
+<% } -%>
+<% if (resource === 'restangular') { -%>
+  'restangular',
+<% } -%>
   uiRouter
 ])
 .config(appConfig)
