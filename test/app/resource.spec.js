@@ -4,13 +4,13 @@ const path = require('path');
 const helpers = require('yeoman-test');
 const assert = require('yeoman-assert');
 
-describe('resource', () => {
+module.exports = () => {
 
   describe('when using restangular', () => {
 
     before(done => {
       this.generator = helpers
-        .run(path.join(__dirname, '../generators/app'))
+        .run(path.join(__dirname, '../../generators/app'))
         .withPrompts({
           resource: 'restangular'
         })
@@ -33,7 +33,7 @@ describe('resource', () => {
 
     before(done => {
       this.generator = helpers
-        .run(path.join(__dirname, '../generators/app'))
+        .run(path.join(__dirname, '../../generators/app'))
         .withPrompts({
           resource: 'ngResource'
         })
@@ -50,4 +50,4 @@ describe('resource', () => {
       assert.fileContent('src/app/app.js', /angular\.module\([\s\S]*, [\s\S]*?ngResource/);
     });
   });
-});
+};
