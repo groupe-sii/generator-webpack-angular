@@ -4,6 +4,7 @@ const path = require('path');
 const helpers = require('yeoman-test');
 const assert = require('yeoman-assert');
 
+let testEnvironments = require('./app/environments.spec');
 let testStyles = require('./app/styles.spec');
 let testResource = require('./app/resource.spec');
 
@@ -41,4 +42,5 @@ describe('app', () => {
 
   testStyles();
   testResource();
+  testEnvironments();
 });
