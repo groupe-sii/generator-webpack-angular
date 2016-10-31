@@ -32,6 +32,8 @@ import '../styles/main.less';
 import '../styles/main.css';
 <% } -%>
 
+import config from 'app.config';
+
 import appConfig from './app.config';
 import appRoute from './app.route';
 import appComponent from './app.component';
@@ -63,5 +65,6 @@ angular.module('app', [
 ])
 .config(appConfig)
 .config(appRoute)
+.constant('CONFIG', config)
 .component('app', appComponent)
 .name;
