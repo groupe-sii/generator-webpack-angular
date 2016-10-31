@@ -38,6 +38,12 @@ module.exports = {
     );
 
     this.fs.copyTpl(
+      this.templatePath('src/config'),
+      this.destinationPath('src/config'),
+      this.props
+    );
+
+    this.fs.copyTpl(
       this.templatePath('src/public'),
       this.destinationPath('src/public'),
       this.props
