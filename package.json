@@ -35,7 +35,7 @@
     "node": ">=4.6.0"
   },
   "devDependencies": {
-    "eslint": "^3.7.1",
+    "eslint": "~3.7.1",
     "mocha": "^3.1.0",
     "yeoman-assert": "^2.2.1",
     "yeoman-test": "^1.5.1"
