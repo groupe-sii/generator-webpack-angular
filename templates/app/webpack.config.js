@@ -1,6 +1,7 @@
 'use strict';
 
 const path = require('path');
+const fs = require('fs');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -8,6 +9,11 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 let TARGET = process.env.npm_lifecycle_event;
+
+// Determinate application environment
+let configPath = `${__dirname}/src/config`;
+let envPos = process.argv.indexOf('--env');
+let env = (envPos !== -1 && fs.existsSync(`${configPath}/config.${process.argv[++envPos]}.json`)) ? process.argv[envPos] : 'dev';
 
 let common = {
 
@@ -25,6 +31,10 @@ let common = {
       loader: 'raw'
     },
     {
+      test: /\.json$/,
+      loader: 'json'
+    },
+    {
       test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
       loader: 'file'
     }]
@@ -40,6 +50,12 @@ let common = {
   devServer: {
     contentBase: './src/public',
     stats: 'minimal'
+  },
+
+  resolve: {
+    alias: {
+      'app.config': `${configPath}/config.${env}.json`
+    }
   }
 };
 
