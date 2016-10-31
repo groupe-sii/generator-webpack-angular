@@ -28,6 +28,9 @@
 <% if (resource === 'ngResource') { -%>
     "angular-resource": "^1.5.8",
 <% } -%>
+<% if (angularTranslate) { -%>
+    "angular-translate": "^2.13.0",
+<% } -%>
     "angular-ui-router": "^1.0.0-beta.3"<% if (resource === 'restangular') { %>,
     "restangular": "^1.5.2"<% } %>
   },
