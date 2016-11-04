@@ -15,6 +15,10 @@ import ngSanitize from 'angular-sanitize';
 <% if (ngTouch) { -%>
 import ngTouch from 'angular-touch';
 <% } -%>
+<% if (angularTranslate) { -%>
+import ngTranslate from 'angular-translate';
+import ngTranslateLoaderStaticFiles from 'angular-translate-loader-static-files';
+<% } -%>
 import uiRouter from 'angular-ui-router';
 <% if (resource === 'ngResource') { -%>
 import ngResource from 'angular-resource';
@@ -54,6 +58,10 @@ angular.module('app', [
 <% } -%>
 <% if (ngTouch) { -%>
   ngTouch,
+<% } -%>
+<% if (angularTranslate) { -%>
+  ngTranslate,
+  ngTranslateLoaderStaticFiles,
 <% } -%>
 <% if (resource === 'ngResource') { -%>
   ngResource,
