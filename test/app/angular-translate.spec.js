@@ -12,7 +12,7 @@ module.exports = () => {
       this.generator = helpers
         .run(path.join(__dirname, '../../generators/app'))
         .withPrompts({
-          resource: 'restangular'
+          otherModules: 'angular-translate'
         })
         .toPromise()
         .then(() => done());
