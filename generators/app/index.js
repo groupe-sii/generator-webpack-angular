@@ -91,6 +91,11 @@ module.exports = class AppGenerator extends Base {
           this.templatePath('_.editorconfig'),
           this.destinationPath('.editorconfig')
         );
+
+        this.fs.copyTpl(
+          this.templatePath('_.gitignore'),
+          this.destinationPath('.gitignore')
+        );
       },
 
       /**
