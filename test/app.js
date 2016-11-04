@@ -7,6 +7,7 @@ const assert = require('yeoman-assert');
 let testEnvironments = require('./app/environments.spec');
 let testStyles = require('./app/styles.spec');
 let testResource = require('./app/resource.spec');
+let testAngularTranslate = require('./app/angular-translate.spec');
 
 /**
  * Test app generator.
@@ -43,4 +44,5 @@ describe('app', () => {
   testStyles();
   testResource();
   testEnvironments();
+  testAngularTranslate();
 });

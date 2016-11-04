@@ -76,6 +76,17 @@ module.exports = class Prompt {
           value: 'css'
         }
       ]
+    }, {
+      type: 'checkbox',
+      name: 'otherModules',
+      message: 'Here are some modules you might be interested in',
+      store: true,
+      choices: [
+        {
+          name: 'angular-translate (18n for your Angular app, made easy!)',
+          value: 'angular-translate'
+        }
+      ]
     }]).then(answers => {
 
       // Angular modules
@@ -90,6 +101,9 @@ module.exports = class Prompt {
 
       // CSS preprocessor
       generator.props.cssPreprocessor = answers.cssPreprocessor;
+
+      // Other modules
+      generator.props.angularTranslate = answers.otherModules && answers.otherModules.includes('angular-translate');
     });
   }
 };

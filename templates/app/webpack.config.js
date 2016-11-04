@@ -44,7 +44,13 @@ let common = {
     new HtmlWebpackPlugin({
       template: './src/public/index.html',
       inject: 'body'
-    })
+    }),
+
+    new CopyWebpackPlugin([
+<% if (angularTranslate) { -%>
+      { from: 'src/config/i18n' }
+<% } -%>
+    ])
   ],
 
   devServer: {
