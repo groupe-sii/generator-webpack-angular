@@ -47,7 +47,9 @@ let common = {
     }),
 
     new CopyWebpackPlugin([
-      <% if (angularTranslate) { -%>{ from: 'src/config/i18n' }<% } -%>
+<% if (angularTranslate) { -%>
+      { from: 'src/config/i18n' }
+<% } -%>
     ])
   ],
 
