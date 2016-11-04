@@ -38,7 +38,7 @@ module.exports = {
     );
 
     this.fs.copyTpl(
-      this.templatePath('src/config'),
+      this.templatePath('src/config/**!(i18n)'),
       this.destinationPath('src/config'),
       this.props
     );
@@ -73,5 +73,19 @@ module.exports = {
           this.destinationPath('src/styles')
         );
     }
+  },
+
+  /**
+   * Write angular-translate locales
+   */
+  angularTranslate () {
+    if (this.props.angularTranslate) {
+      this.fs.copyTpl(
+        this.templatePath('src/config/i18n'),
+        this.destinationPath('src/config/i18n'),
+        this.props
+      );
+    }
   }
+
 };
