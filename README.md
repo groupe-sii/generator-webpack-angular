@@ -7,27 +7,27 @@
 
 ### Stack
 
-[![AngularJS](assets/angularjs.png)](https://angularjs.org/)
-[![Webpack](assets/webpack.png)](https://webpack.github.io/)
-[![Karma](assets/karma.png)](https://karma-runner.github.io)
-[![ESLint](assets/eslint.png)](http://eslint.org/)
+[![AngularJS](assets/angularjs.png "AngularJS")](https://angularjs.org/)
+[![Webpack](assets/webpack.png "Webpack")](https://webpack.github.io/)
+[![Karma](assets/karma.png "Karma")](https://karma-runner.github.io)
+[![ESLint](assets/eslint.png "ESLint")](http://eslint.org/)
 
 ### CSS preprocessors
 
-![CSS](assets/css3.png)
-[![Sass](assets/sass.png)](http://sass-lang.com/)
-[![Less](assets/less.png)](http://lesscss.org/)
+![CSS](assets/css3.png "CSS 3")
+[![Sass](assets/sass.png "Sass")](http://sass-lang.com/)
+[![Less](assets/less.png "Less")](http://lesscss.org/)
 
 ### UI Frameworks
 
-[![Bootstrap](assets/bootstrap.png)](http://getbootstrap.com/)
-[![Foundation](assets/foundation.png)](http://foundation.zurb.com/)
-[![AngularJS Material](assets/angularjs-material.png)](https://material.angularjs.org/latest/)
+[![Bootstrap](assets/bootstrap.png "Bootstrap")](http://getbootstrap.com/)
+[![Foundation](assets/foundation.png "Foundation")](http://foundation.zurb.com/)
+[![AngularJS Material](assets/angularjs-material.png "AngularJS Material")](https://material.angularjs.org/latest/)
 
 ### Modules
 
-[![angular-translate](assets/angular-translate.png)](https://angular-translate.github.io/)
-[![SonarQube](assets/sonar-qube.png)](https://github.com/groupe-sii/sonar-web-frontend-reporters)
+[![angular-translate](assets/angular-translate.png "Angular Translate")](https://angular-translate.github.io/)
+[![SonarQube](assets/sonar-qube.png "sonar-web-frontend-reporters")](https://github.com/groupe-sii/sonar-web-frontend-reporters)
 
 ## Usage
 
