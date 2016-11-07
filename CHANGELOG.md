@@ -8,7 +8,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Added
 
-- **css-preprocessors**: which CSS preprocessor do you want? from [@aguele] [@jledentu]
+- **css-preprocessors**: which CSS preprocessor do you want? from [@aguele] & [@jledentu]
 - **resource**: would you like to use a REST resource library? from [@vgo]
 - **environments**: management application environments from [@vgo]
 - **angular-translate**: angular-translate (18n for your Angular app, made easy!) from [@vgo]
