@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "build": "rimraf dist && webpack --bail --progress --profile",
-    "start": "webpack-dev-server --history-api-fallback --inline --progress --hot --env dev",
-    "start:prod": "webpack-dev-server --history-api-fallback --inline --progress --hot --env prod"
+    "serve": "webpack-dev-server --history-api-fallback --inline --progress --hot --env dev",
+    "serve:prod": "webpack-dev-server --history-api-fallback --inline --progress --hot --env prod"
   },
   "dependencies": {
     "angular": "^1.5.8",
