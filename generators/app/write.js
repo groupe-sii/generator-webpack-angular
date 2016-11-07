@@ -17,6 +17,17 @@ module.exports = {
   },
 
   /**
+   * Write COMMITS-CONVENTION.
+   */
+  commitsConvention () {
+    this.fs.copyTpl(
+      this.templatePath('COMMITS-CONVENTION.md'),
+      this.destinationPath('COMMITS-CONVENTION.md'),
+      this.props
+    );
+  },
+
+  /**
    * Write webpack.config.js.
    */
   webpack () {
