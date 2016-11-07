@@ -28,6 +28,17 @@ module.exports = {
   },
 
   /**
+   * Write CHANGELOG.
+   */
+  changelog () {
+    this.fs.copyTpl(
+      this.templatePath('CHANGELOG.md'),
+      this.destinationPath('CHANGELOG.md'),
+      this.props
+    );
+  },
+
+  /**
    * Write webpack.config.js.
    */
   webpack () {

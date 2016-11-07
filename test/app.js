@@ -26,6 +26,10 @@ describe('app', () => {
       assert.file('README.md');
     });
 
+    it('should generate a CHANGELOG.md file', () => {
+      assert.file('CHANGELOG.md');
+    });
+
     it('should generate a COMMITS-CONVENTION.md file', () => {
       assert.file('COMMITS-CONVENTION.md');
     });
