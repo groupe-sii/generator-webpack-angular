@@ -73,6 +73,17 @@ module.exports = {
   },
 
   /**
+   * Write tools directory
+   */
+  tools () {
+    this.fs.copyTpl(
+      this.templatePath('tools/git'),
+      this.destinationPath('tools/git'),
+      this.props
+    );
+  },
+
+  /**
    * Write styles.
    */
   styles () {

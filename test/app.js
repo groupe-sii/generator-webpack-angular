@@ -30,8 +30,9 @@ describe('app', () => {
       assert.file('CHANGELOG.md');
     });
 
-    it('should generate a COMMITS-CONVENTION.md file', () => {
+    it('should generate a commits convention', () => {
       assert.file('COMMITS-CONVENTION.md');
+      assert.file('tools/git/commit-msg.js');
     });
 
     it('should generate a main SASS file', () => {
