@@ -22,8 +22,12 @@ describe('app', () => {
         .then(() => done());
     });
 
-    it('should generate a README', () => {
+    it('should generate a README file', () => {
       assert.file('README.md');
+    });
+
+    it('should generate a COMMITS-CONVENTION.md file', () => {
+      assert.file('COMMITS-CONVENTION.md');
     });
 
     it('should generate a main SASS file', () => {
