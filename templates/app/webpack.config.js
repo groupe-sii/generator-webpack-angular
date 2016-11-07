@@ -82,7 +82,8 @@ if (TARGET === 'serve') {
         test: /\.css$/,
         loaders: ['style-loader', 'css-loader']
       }<% } %>]
-    }
+    },
+    devtool: 'cheap-module-eval-source-map'
   });
 }
 
