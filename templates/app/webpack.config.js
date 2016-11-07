@@ -66,7 +66,7 @@ let common = {
 };
 
 // Development
-if (TARGET === 'start') {
+if (TARGET === 'serve') {
   module.exports = merge.smart(common, {
     module: {
       loaders: [<% if (cssPreprocessor === 'sass') { %>
