@@ -81,18 +81,4 @@ module.exports = () => {
 
   });
 
-  describe('when using Foundation', () => {
-
-    before(done => {
-      this.generator = helpers
-        .run(path.join(__dirname, '../../generators/app'))
-        .withPrompts({
-          uiFramework: 'foundation'
-        })
-        .toPromise()
-        .then(() => done());
-    });
-
-  });
-
 };
