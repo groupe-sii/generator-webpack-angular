@@ -28,6 +28,13 @@ module.exports = () => {
       assert.fileContent('src/app/app.js', /angular\.module\([\s\S]*, [\s\S]*?ngMaterial/);
     });
 
+    it('should add material-design-icons', () => {
+      assert.file('src/styles/base/_typography.scss');
+      assert.file('src/styles/vendors/_material-icons.scss');
+      assert.fileContent('src/styles/main.scss', '@import \'vendors/material-icons\'');
+      assert.fileContent('src/styles/main.scss', '@import \'base/typography\'');
+    });
+
     it('shouldn\'t add angular-touch', () => {
       assert.noFileContent('package.json', 'angular-touch');
       assert.noFileContent('src/app/app.js', 'import ngTouch from \'angular-touch\'');
