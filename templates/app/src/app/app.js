@@ -1,5 +1,5 @@
 import angular from 'angular';
-<% if (ngAnimate) { -%>
+<% if (ngAnimate || uiFramework === 'bootstrap') { -%>
 import ngAnimate from 'angular-animate';
 <% } -%>
 import ngAria from 'angular-aria';
@@ -12,11 +12,14 @@ import ngMessages from 'angular-messages';
 <% if (ngSanitize) { -%>
 import ngSanitize from 'angular-sanitize';
 <% } -%>
-<% if (ngTouch && uiFramework !== 'ngMaterial') { -%>
+<% if ((ngTouch || uiFramework === 'bootstrap') && uiFramework !== 'ngMaterial') { -%>
 import ngTouch from 'angular-touch';
 <% } -%>
 <% if (uiFramework === 'ngMaterial') { -%>
 import ngMaterial from 'angular-material';
+<% } -%>
+<% if (uiFramework === 'bootstrap') { -%>
+import ngBootstrap from 'angular-ui-bootstrap';
 <% } -%>
 <% if (angularTranslate) { -%>
 import ngTranslate from 'angular-translate';
@@ -41,6 +44,9 @@ import '../styles/main.css';
 <% if (uiFramework === 'ngMaterial') { -%>
 import 'angular-material/angular-material.css';
 <% } -%>
+<% if (uiFramework === 'bootstrap') { -%>
+import 'bootstrap/dist/css/bootstrap.min.css';
+<% } -%>
 
 import config from 'app.config';
 
@@ -49,7 +55,7 @@ import appRoute from './app.route';
 import appComponent from './app.component';
 
 angular.module('app', [
-<% if (ngAnimate) { -%>
+<% if (ngAnimate || uiFramework === 'bootstrap') { -%>
   ngAnimate,
 <% } -%>
   ngAria,
@@ -62,11 +68,14 @@ angular.module('app', [
 <% if (ngSanitize) { -%>
   ngSanitize,
 <% } -%>
-<% if (ngTouch && uiFramework !== 'ngMaterial') { -%>
+<% if ((ngTouch || uiFramework === 'bootstrap') && uiFramework !== 'ngMaterial') { -%>
   ngTouch,
 <% } -%>
 <% if (uiFramework === 'ngMaterial') { -%>
   ngMaterial,
+<% } -%>
+<% if (uiFramework === 'bootstrap') { -%>
+  ngBootstrap,
 <% } -%>
 <% if (angularTranslate) { -%>
   ngTranslate,

@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "angular": "^1.5.8",
-<% if (ngAnimate) { -%>
+<% if (ngAnimate || uiFramework === 'bootstrap') { -%>
     "angular-animate": "^1.5.8",
 <% } -%>
     "angular-aria": "^1.5.8",
@@ -26,7 +26,7 @@
 <% if (ngSanitize) { -%>
     "angular-sanitize": "^1.5.8",
 <% } -%>
-<% if (ngTouch && uiFramework !== 'ngMaterial') { -%>
+<% if ((ngTouch || uiFramework === 'bootstrap') && uiFramework !== 'ngMaterial') { -%>
     "angular-touch": "^1.5.8",
 <% } -%>
 <% if (resource === 'ngResource') { -%>
@@ -39,6 +39,10 @@
     "angular-ui-router": "^1.0.0-beta.3"<% if (resource === 'restangular') { %>,
 <% if (uiFramework === 'ngMaterial') { -%>
     "material-design-icons": "^3.0.1",
+<% } -%>
+<% if (uiFramework === 'bootstrap') { -%>
+    "angular-ui-bootstrap": "^2.2.0",
+    "bootstrap": "^3.3.7",
 <% } -%>
     "restangular": "^1.5.2"<% } %>
   },
