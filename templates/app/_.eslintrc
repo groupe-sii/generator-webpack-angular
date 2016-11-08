@@ -1,6 +1,7 @@
 {
   "extends": "eslint:recommended",
   "plugins": ["angular"],
+  "parser": "babel-eslint",
   "rules": {
     "angular/no-service-method": 0
   },
