@@ -18,4 +18,4 @@ export default function ($locationProvider<% if (angularTranslate) { -%>, $trans
     .preferredLanguage(navigator.browserLanguage || navigator.language);
 <% } -%>
 
-};
+}
