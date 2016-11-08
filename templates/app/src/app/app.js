@@ -12,8 +12,11 @@ import ngMessages from 'angular-messages';
 <% if (ngSanitize) { -%>
 import ngSanitize from 'angular-sanitize';
 <% } -%>
-<% if (ngTouch) { -%>
+<% if (ngTouch && uiFramework !== 'ngMaterial') { -%>
 import ngTouch from 'angular-touch';
+<% } -%>
+<% if (uiFramework === 'ngMaterial') { -%>
+import ngMaterial from 'angular-material';
 <% } -%>
 <% if (angularTranslate) { -%>
 import ngTranslate from 'angular-translate';
@@ -34,6 +37,9 @@ import '../styles/main.scss';
 import '../styles/main.less';
 <% } else { -%>
 import '../styles/main.css';
+<% } -%>
+<% if (uiFramework === 'ngMaterial') { -%>
+import 'angular-material/angular-material.css';
 <% } -%>
 
 import config from 'app.config';
@@ -56,8 +62,11 @@ angular.module('app', [
 <% if (ngSanitize) { -%>
   ngSanitize,
 <% } -%>
-<% if (ngTouch) { -%>
+<% if (ngTouch && uiFramework !== 'ngMaterial') { -%>
   ngTouch,
+<% } -%>
+<% if (uiFramework === 'ngMaterial') { -%>
+  ngMaterial,
 <% } -%>
 <% if (angularTranslate) { -%>
   ngTranslate,

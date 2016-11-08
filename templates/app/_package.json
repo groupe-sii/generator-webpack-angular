@@ -17,13 +17,16 @@
 <% if (ngCookies) { -%>
     "angular-cookies": "^1.5.8",
 <% } -%>
+<% if (uiFramework === 'ngMaterial') { -%>
+    "angular-material": "^1.1.1",
+<% } -%>
 <% if (ngMessages) { -%>
     "angular-messages": "^1.5.8",
 <% } -%>
 <% if (ngSanitize) { -%>
     "angular-sanitize": "^1.5.8",
 <% } -%>
-<% if (ngTouch) { -%>
+<% if (ngTouch && uiFramework !== 'ngMaterial') { -%>
     "angular-touch": "^1.5.8",
 <% } -%>
 <% if (resource === 'ngResource') { -%>

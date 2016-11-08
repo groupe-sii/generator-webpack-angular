@@ -58,6 +58,30 @@ module.exports = class Prompt {
       ]
     }, {
       type: 'list',
+      name: 'uiFramework',
+      message: 'Which UI framework do you want?',
+      default: 'ngMaterial',
+      store: true,
+      choices: [
+        {
+          name: 'Angular Material, the reference implementation of the Google\'s Material Design specification',
+          value: 'ngMaterial'
+        },
+        {
+          name: 'Bootstrap, the most popular HTML, CSS, and JS framework',
+          value: 'bootstrap'
+        },
+        {
+          name: 'Foundation, "The most advanced responsive front-end framework in the world"',
+          value: 'foundation'
+        },
+        {
+          name: 'None',
+          value: 'none'
+        }
+      ]
+    }, {
+      type: 'list',
       name: 'cssPreprocessor',
       message: 'Which CSS preprocessor do you want?',
       default: 'sass',
@@ -98,6 +122,9 @@ module.exports = class Prompt {
 
       // Resource
       generator.props.resource = answers.resource;
+
+      // UI Framework
+      generator.props.uiFramework = answers.uiFramework;
 
       // CSS preprocessor
       generator.props.cssPreprocessor = answers.cssPreprocessor;
