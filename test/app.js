@@ -8,6 +8,7 @@ let testEnvironments = require('./app/environments.spec');
 let testStyles = require('./app/styles.spec');
 let testResource = require('./app/resource.spec');
 let testAngularTranslate = require('./app/angular-translate.spec');
+let testUIFrameworks = require('./app/ui-frameworks.spec');
 
 /**
  * Test app generator.
@@ -54,4 +55,5 @@ describe('app', () => {
   testResource();
   testEnvironments();
   testAngularTranslate();
+  testUIFrameworks();
 });
