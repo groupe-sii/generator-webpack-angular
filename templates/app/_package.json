@@ -37,6 +37,9 @@
     "angular-translate-loader-static-files": "^2.13.0",
 <% } -%>
     "angular-ui-router": "^1.0.0-beta.3"<% if (resource === 'restangular') { %>,
+<% if (uiFramework === 'ngMaterial') { -%>
+    "material-design-icons": "^3.0.1",
+<% } -%>
     "restangular": "^1.5.2"<% } %>
   },
   "devDependencies": {

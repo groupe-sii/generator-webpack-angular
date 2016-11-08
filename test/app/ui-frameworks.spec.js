@@ -29,6 +29,7 @@ module.exports = () => {
     });
 
     it('should add material-design-icons', () => {
+      assert.fileContent('package.json', 'material-design-icons');
       assert.file('src/styles/base/_typography.scss');
       assert.file('src/styles/vendors/_material-icons.scss');
       assert.fileContent('src/styles/main.scss', '@import \'vendors/material-icons\'');
