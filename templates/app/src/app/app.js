@@ -74,5 +74,4 @@ angular.module('app', [
 .config(appConfig)
 .config(appRoute)
 .constant('CONFIG', config)
-.component('app', appComponent)
-.name;
+.component('app', appComponent);
