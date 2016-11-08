@@ -107,6 +107,16 @@ module.exports = class AppGenerator extends Base {
           this.destinationPath('package.json'),
           this.props
         );
+      },
+
+      /**
+       * Write linter files
+       */
+      linters () {
+        this.fs.copyTpl(
+          this.templatePath('_.htmlhintrc'),
+          this.destinationPath('.htmlhintrc')
+        );
       }
     };
   }
