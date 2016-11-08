@@ -1,0 +1,16 @@
+{
+  "extends": "eslint:recommended",
+  "plugins": ["angular"],
+  "rules": {
+    "angular/no-service-method": 0
+  },
+  "env": {
+    "browser": true
+  },
+  "globals": {
+    "angular": true,
+    "module": true,
+    "inject": true,
+    "require": true
+  }
+}

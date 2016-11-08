@@ -118,6 +118,16 @@ module.exports = class AppGenerator extends Base {
           this.destinationPath('.htmlhintrc')
         );
 
+        this.fs.copyTpl(
+          this.templatePath('_.eslintrc'),
+          this.destinationPath('.eslintrc')
+        );
+
+        this.fs.copyTpl(
+          this.templatePath('_.eslintignore'),
+          this.destinationPath('.eslintignore')
+        );
+
         if (this.props.cssPreprocessor === 'sass') {
           this.fs.copyTpl(
             this.templatePath('_.scsslintrc'),
