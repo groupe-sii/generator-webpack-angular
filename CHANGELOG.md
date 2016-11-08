@@ -13,6 +13,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - **environments**: management application environments from [@vgo]
 - **angular-translate**: angular-translate (18n for your Angular app, made easy!) from [@vgo]
 - **ui-router**: use [AngularUI Router](https://github.com/angular-ui/ui-router) by default from [@jledentu]
+- **ui-frameworks**: Which UI framework do you want? from [@vgo]
 
 [@aguele]: https://github.com/aguele
 [@jledentu]: https://github.com/jledentu
