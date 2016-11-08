@@ -20,9 +20,8 @@
 
 ### UI Frameworks
 
-[![Bootstrap](assets/bootstrap.png "Bootstrap")](http://getbootstrap.com/)
-[![Foundation](assets/foundation.png "Foundation")](http://foundation.zurb.com/)
 [![AngularJS Material](assets/angularjs-material.png "AngularJS Material")](https://material.angularjs.org/latest/)
+[![Bootstrap](assets/bootstrap.png "Bootstrap")](http://getbootstrap.com/)
 
 ### Modules
 

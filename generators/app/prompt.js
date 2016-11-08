@@ -72,10 +72,6 @@ module.exports = class Prompt {
           value: 'bootstrap'
         },
         {
-          name: 'Foundation, "The most advanced responsive front-end framework in the world"',
-          value: 'foundation'
-        },
-        {
           name: 'None',
           value: 'none'
         }
