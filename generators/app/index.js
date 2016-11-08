@@ -117,6 +117,13 @@ module.exports = class AppGenerator extends Base {
           this.templatePath('_.htmlhintrc'),
           this.destinationPath('.htmlhintrc')
         );
+
+        if (this.props.cssPreprocessor === 'sass') {
+          this.fs.copyTpl(
+            this.templatePath('_.scsslintrc'),
+            this.destinationPath('.scsslintrc')
+          );
+        }
       }
     };
   }
