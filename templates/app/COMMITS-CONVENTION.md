@@ -60,3 +60,17 @@ Copy `tools/git/commit-msg.js` file to `.git/hooks/commit-msg` location:
 ```sh
 $ ln -s tools/git/commit-msg.js .git/hooks/commit-msg
 ```
+
+## Rebase
+
+Configure your local git yo pull in `rebase` mode instead of default `merge` mode:
+
+```sh
+$ git config pull.rebase true
+```
+
+Among other things, this will avoid this king of messages:
+
+```
+Merge branch 'develop' of https://[URL] into develop
+```
