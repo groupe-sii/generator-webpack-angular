@@ -107,6 +107,33 @@ module.exports = class AppGenerator extends Base {
           this.destinationPath('package.json'),
           this.props
         );
+      },
+
+      /**
+       * Write linter files
+       */
+      linters () {
+        this.fs.copyTpl(
+          this.templatePath('_.htmlhintrc'),
+          this.destinationPath('.htmlhintrc')
+        );
+
+        this.fs.copyTpl(
+          this.templatePath('_.eslintrc'),
+          this.destinationPath('.eslintrc')
+        );
+
+        this.fs.copyTpl(
+          this.templatePath('_.eslintignore'),
+          this.destinationPath('.eslintignore')
+        );
+
+        if (this.props.cssPreprocessor === 'sass') {
+          this.fs.copyTpl(
+            this.templatePath('_.scsslintrc'),
+            this.destinationPath('.scsslintrc')
+          );
+        }
       }
     };
   }
@@ -135,5 +162,6 @@ module.exports = class AppGenerator extends Base {
     this.log(`- ${chalk.yellow.bold('npm run serve')} to launch a webpack-dev-server server on your source files`);
     this.log(`- ${chalk.yellow.bold('npm run serve:prod')} to launch a webpack-dev-server server on your source files in a ${chalk.yellow.bold('production')} environment`);
     this.log(`- ${chalk.yellow.bold('npm run test')} to launch your unit tests with Karma`);
+    this.log(`- ${chalk.yellow.bold('npm run lint')} to launch linting process`);
   }
 };
