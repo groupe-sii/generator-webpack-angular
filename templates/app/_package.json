@@ -6,7 +6,9 @@
     "build": "rimraf dist && webpack --bail --progress --profile --env dev",
     "build:prod": "rimraf dist && webpack --bail --progress --profile --env prod",
     "serve": "webpack-dev-server --history-api-fallback --inline --progress --hot --env dev",
-    "serve:prod": "webpack-dev-server --history-api-fallback --inline --progress --hot --env prod"
+    "serve:prod": "webpack-dev-server --history-api-fallback --inline --progress --hot --env prod",
+    "test": "npm run-script lint",
+    "lint": "eslint . && htmlhint .<% if (cssPreprocessor === 'sass') { -%> && scss-lint src/styles/<% } -%>"
   },
   "dependencies": {
     "angular": "^1.5.8",
