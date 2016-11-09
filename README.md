@@ -68,6 +68,24 @@ $ yo @groupe-sii/webpack-angular
 
 ## [Changelog](https://github.com/groupe-sii/generator-webpack-angular/blob/master/CHANGELOG.md)
 
+## Roadmap
+
+- [x] Call APIs
+- [x] Handle environments
+- [x] angular-translate support
+- [x] UI Router has default router
+- [x] CSS preprocessors (Css, Sass, Less)
+- [x] Angular modules choice (angular-animate, angular-touch, ...)
+- [x] UI Frameworks choice (angular-material, bootstrap)
+- [x] Linters (ESLint, HTMLHint, SCSSLint, CSSLint)
+- [ ] Unit tests with Karma
+- [ ] REST API mock (json-server)
+- [ ] autoprefixer integration
+- [ ] Landing page post generation
+- [ ] Dgeni to generate documentation
+- [ ] Sonar reporters
+- [ ] CI with Jenkins
+
 ## License
 
 MIT License
