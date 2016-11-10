@@ -30,6 +30,11 @@ What's included in details over [here](docs/STACK.md)
 [![angular-translate](assets/angular-translate.png "Angular Translate")](https://angular-translate.github.io/)
 [![SonarQube](assets/sonar-qube.png "sonar-web-frontend-reporters")](https://github.com/groupe-sii/sonar-web-frontend-reporters)
 
+### Package Managers
+
+[![npm](assets/npm.png "npm")](https://www.npmjs.com/)
+[![Yarn](assets/yarn.png "Yarn")](https://yarnpkg.com/)
+
 ## Usage
 
 ### Install
