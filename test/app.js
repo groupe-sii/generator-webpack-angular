@@ -10,6 +10,7 @@ let testResource = require('./app/resource.spec');
 let testAngularTranslate = require('./app/angular-translate.spec');
 let testUIFrameworks = require('./app/ui-frameworks.spec');
 let testLinters = require('./app/linters.spec');
+let testCSSPreprocessors = require('./app/css-preprocessors.spec');
 
 /**
  * Test app generator.
@@ -58,4 +59,5 @@ describe('app', () => {
   testAngularTranslate();
   testUIFrameworks();
   testLinters();
+  testCSSPreprocessors();
 });
