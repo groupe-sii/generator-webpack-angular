@@ -154,7 +154,16 @@ module.exports = class AppGenerator extends Base {
    * Install dependencies.
    */
   install () {
-    this.npmInstall();
+    switch (this.props.packageManager) {
+      case 'yarn':
+        this.runInstall('yarn', '--ignore-optional');
+        break;
+
+      default:
+      case 'npm':
+        this.npmInstall();
+        break;
+    }
   }
 
   /**

@@ -107,6 +107,22 @@ module.exports = class Prompt {
           value: 'angular-translate'
         }
       ]
+    }, {
+      type: 'list',
+      name: 'packageManager',
+      message: 'What package manager should i use to install your dependencies ?',
+      default: 'npm',
+      store: true,
+      choices: [
+        {
+          name: 'npm, a package manager for javascript',
+          value: 'npm'
+        },
+        {
+          name: 'Yarn, Fast, reliable, and secure dependency management',
+          value: 'yarn'
+        }
+      ]
     }]).then(answers => {
 
       // Angular modules
@@ -127,6 +143,10 @@ module.exports = class Prompt {
 
       // Other modules
       generator.props.angularTranslate = answers.otherModules && answers.otherModules.includes('angular-translate');
+
+      // Package manager
+      generator.props.angularTranslate = answers.packageManager;
+
     });
   }
 };
