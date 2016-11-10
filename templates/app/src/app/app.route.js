@@ -6,7 +6,7 @@ export default function ($stateProvider, $urlRouterProvider) {
 
   $stateProvider
     .state('app', {
-      url: '/',
+      url      : '/',
       component: 'app'
     });
 

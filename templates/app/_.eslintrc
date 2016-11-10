@@ -68,11 +68,7 @@
       "SwitchCase": 2
     }],
     "key-spacing": ["error", {
-      "align": {
-        "beforeColon": true,
-        "afterColon":  true,
-        "on":          "colon"
-      }
+      "align": "colon"
     }],
     "keyword-spacing": "error",
     "linebreak-style": ["error", "unix"],
