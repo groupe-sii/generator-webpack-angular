@@ -145,7 +145,7 @@ module.exports = class Prompt {
       generator.props.angularTranslate = answers.otherModules && answers.otherModules.includes('angular-translate');
 
       // Package manager
-      generator.props.angularTranslate = answers.packageManager;
+      generator.props.packageManager = answers.packageManager;
 
     });
   }
