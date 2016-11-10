@@ -170,12 +170,12 @@ module.exports = class AppGenerator extends Base {
    * Say goodbye.
    */
   end () {
-    this.log('It\'s time to use npm scripts:');
-    this.log(`- ${chalk.yellow.bold('npm run build')} to build an optimized version of your application in folder /dist`);
-    this.log(`- ${chalk.yellow.bold('npm run build:prod')} to build an optimized version of your application in folder /dist in a ${chalk.yellow.bold('production')} environment`);
-    this.log(`- ${chalk.yellow.bold('npm run serve')} to launch a webpack-dev-server server on your source files`);
-    this.log(`- ${chalk.yellow.bold('npm run serve:prod')} to launch a webpack-dev-server server on your source files in a ${chalk.yellow.bold('production')} environment`);
-    this.log(`- ${chalk.yellow.bold('npm run test')} to launch your unit tests with Karma`);
-    this.log(`- ${chalk.yellow.bold('npm run lint')} to launch linting process`);
+    this.log(`It's time to use ${this.props.packageManager.charAt(0).toUpperCase() + this.props.packageManager.slice(1)} scripts:`);
+    this.log(`- ${chalk.yellow.bold(`${this.props.packageManager} run build`)} to build an optimized version of your application in folder /dist`);
+    this.log(`- ${chalk.yellow.bold(`${this.props.packageManager} run build:prod`)} to build an optimized version of your application in folder /dist in a ${chalk.yellow.bold('production')} environment`);
+    this.log(`- ${chalk.yellow.bold(`${this.props.packageManager} run serve`)} to launch a webpack-dev-server server on your source files`);
+    this.log(`- ${chalk.yellow.bold(`${this.props.packageManager} run serve:prod`)} to launch a webpack-dev-server server on your source files in a ${chalk.yellow.bold('production')} environment`);
+    this.log(`- ${chalk.yellow.bold(`${this.props.packageManager} run test`)} to launch your unit tests with Karma`);
+    this.log(`- ${chalk.yellow.bold(`${this.props.packageManager} run lint`)} to launch linting process`);
   }
 };
