@@ -128,11 +128,21 @@ module.exports = class AppGenerator extends Base {
           this.destinationPath('.eslintignore')
         );
 
-        if (this.props.cssPreprocessor === 'sass') {
-          this.fs.copyTpl(
-            this.templatePath('_.scsslintrc'),
-            this.destinationPath('.scsslintrc')
-          );
+        switch (this.props.cssPreprocessor) {
+          case 'css':
+            this.fs.copyTpl(
+              this.templatePath('_.csslintrc'),
+              this.destinationPath('.csslintrc')
+            );
+            break;
+
+          default:
+          case 'sass':
+            this.fs.copyTpl(
+              this.templatePath('_.scsslintrc'),
+              this.destinationPath('.scsslintrc')
+            );
+            break;
         }
       }
     };
