@@ -73,6 +73,7 @@
 <% if (cssPreprocessor === 'sass') { -%>
     "node-sass": "^3.10.1",
 <% } -%>
+    "postcss-loader": "^1.1.1",
     "raw-loader": "^0.5.1",
     "rimraf": "^2.5.1",
 <% if (cssPreprocessor === 'sass') { -%>

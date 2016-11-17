@@ -47,6 +47,11 @@ module.exports = {
       this.destinationPath('webpack.config.js'),
       this.props
     );
+
+    this.fs.copyTpl(
+      this.templatePath('postcss.config.js'),
+      this.destinationPath('postcss.config.js')
+    );
   },
 
   /**

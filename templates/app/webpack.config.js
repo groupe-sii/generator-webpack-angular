@@ -32,7 +32,7 @@ let common = {
     },
     {
       test: /\.css$/,
-      loader: 'style-loader!css-loader'
+      loaders: [ 'style-loader', 'css-loader?importLoaders=1', 'postcss-loader' ]
     },
     {
       test: /\.json$/,
@@ -76,15 +76,15 @@ if (TARGET === 'serve') {
       loaders: [<% if (cssPreprocessor === 'sass') { %>
       {
         test: /\.scss$/,
-        loaders: ['style-loader', 'css-loader', 'sass-loader']
+        loaders: ['style-loader', 'css-loader?sourceMap&importLoaders=1', 'postcss-loader', 'sass-loader?sourceMap']
       }<% } else if (cssPreprocessor === 'less') { %>,
       {
         test: /\.less$/,
-        loaders: ['style-loader', 'css-loader', 'less-loader']
+        loaders: ['style-loader', 'css-loader?sourceMap&importLoaders=1', 'postcss-loader', 'less-loader?sourceMap']
       }<% } else { %>,
       {
         test: /\.css$/,
-        loaders: ['style-loader', 'css-loader']
+        loaders: [ 'style-loader', 'css-loader?importLoaders=1', 'postcss-loader' ]
       }<% } %>]
     },
     devtool: 'cheap-module-eval-source-map'
@@ -105,15 +105,15 @@ if (TARGET === 'build') {
       loaders: [<% if (cssPreprocessor === 'sass') { %>
         {
           test: /\.scss$/,
-          loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader')
+          loader: ExtractTextPlugin.extract('style-loader', ['css-loader?importLoaders=1', 'postcss-loader', 'sass-loader'])
         }<% } else if (cssPreprocessor === 'less') { %>
         {
           test: /\.less$/,
-          loader: ExtractTextPlugin.extract('style-loader', 'css-loader!less-loader')
+          loader: ExtractTextPlugin.extract('style-loader', ['css-loader?importLoaders=1', 'postcss-loader', 'less-loader'])
         }<% } else { %>
         {
           test: /\.css$/,
-          loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
+          loader: ExtractTextPlugin.extract('style-loader', ['css-loader?importLoaders=1', 'postcss-loader'])
         }<% } %>
       ]
     },
