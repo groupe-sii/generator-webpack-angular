@@ -5,7 +5,6 @@ const helpers = require('yeoman-test');
 const assert = require('yeoman-assert');
 
 let testEnvironments = require('./app/environments.spec');
-let testStyles = require('./app/styles.spec');
 let testResource = require('./app/resource.spec');
 let testAngularTranslate = require('./app/angular-translate.spec');
 let testUIFrameworks = require('./app/ui-frameworks.spec');
@@ -38,6 +37,10 @@ describe('app', () => {
       assert.file('tools/git/commit-msg.js');
     });
 
+    it('should generate the PostCSS configuration file', () => {
+      assert.file('postcss.config.js');
+    });
+
     it('should generate a main SASS file', () => {
       assert.file('src/styles/main.scss');
       assert.fileContent('src/styles/main.scss', '');
@@ -53,7 +56,6 @@ describe('app', () => {
     });
   });
 
-  testStyles();
   testResource();
   testEnvironments();
   testAngularTranslate();
