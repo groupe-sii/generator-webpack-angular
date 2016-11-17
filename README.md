@@ -5,6 +5,8 @@
 
 ## Generator
 
+What's included in details over [here](docs/STACK.md)
+
 ### Stack
 
 [![AngularJS](assets/angularjs.png "AngularJS")](https://angularjs.org/)
