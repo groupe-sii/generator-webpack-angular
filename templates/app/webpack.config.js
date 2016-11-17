@@ -76,15 +76,15 @@ if (TARGET === 'serve') {
       loaders: [<% if (cssPreprocessor === 'sass') { %>
       {
         test: /\.scss$/,
-        loaders: ['style-loader', 'css-loader', 'sass-loader']
+        loaders: ['style-loader', 'css-loader?sourceMap', 'sass-loader?sourceMap']
       }<% } else if (cssPreprocessor === 'less') { %>,
       {
         test: /\.less$/,
-        loaders: ['style-loader', 'css-loader', 'less-loader']
+        loaders: ['style-loader', 'css-loader?sourceMap', 'less-loader?sourceMap']
       }<% } else { %>,
       {
         test: /\.css$/,
-        loaders: ['style-loader', 'css-loader']
+        loaders: ['style-loader', 'css-loader?sourceMap']
       }<% } %>]
     },
     devtool: 'cheap-module-eval-source-map'
