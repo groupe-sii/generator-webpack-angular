@@ -14,6 +14,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - **angular-translate**: angular-translate (18n for your Angular app, made easy!) from [@vgo]
 - **ui-router**: use [AngularUI Router](https://github.com/angular-ui/ui-router) by default from [@jledentu]
 - **ui-frameworks**: Which UI framework do you want? from [@vgo]
+- **linting**: Add ESLint, HTMLHint, SCSSLint & CSSLint support from [@vgo]
+- **package-manager**: Let's you choose between **npm** or **Yarn** package manager from [@vgo]
+- **postcss**: Add PostCSS treatments from [@vgo]
 
 [@aguele]: https://github.com/aguele
 [@jledentu]: https://github.com/jledentu
