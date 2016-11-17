@@ -80,13 +80,12 @@ $ yo @groupe-sii/webpack-angular
 - [x] Angular modules choice (angular-animate, angular-touch, ...)
 - [x] UI Frameworks choice (angular-material, bootstrap)
 - [x] Linters (ESLint, HTMLHint, SCSSLint, CSSLint)
+- [x] autoprefixer integration
 - [ ] Unit tests with Karma
 - [ ] REST API mock (json-server)
-- [ ] autoprefixer integration
 - [ ] Landing page post generation
 - [ ] Dgeni to generate documentation
 - [ ] Sonar reporters
-- [ ] CI with Jenkins
 
 ## License
 
