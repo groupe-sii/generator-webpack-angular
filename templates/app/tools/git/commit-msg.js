@@ -10,28 +10,28 @@
 
 'use strict';
 
-var fs = require('fs');
-var util = require('util');
+const fs  = require('fs'),
+  util    = require('util');
 
-var MAX_LENGTH = 100;
-var PATTERN = /^(?:fixup!\s*)?(\w*)(\(([\w\$\.\*/-]*)\))?\: (.*)$/;
-var IGNORED = /^WIP\:/;
-var TYPES = {
-  feat: true,
-  fix: true,
-  docs: true,
-  style: true,
-  refactor: true,
-  perf: true,
-  test: true,
-  chore: true,
-  revert: true
-};
+const MAX_LENGTH  = 100,
+  PATTERN         = /^(?:fixup!\s*)?(\w*)(\(([\w\$\.\*/-]*)\))?\: (.*)$/,
+  IGNORED         = /^WIP\:/,
+  TYPES           = {
+    feat: true,
+    fix: true,
+    docs: true,
+    style: true,
+    refactor: true,
+    perf: true,
+    test: true,
+    chore: true,
+    revert: true
+  };
 
-var error = function() {
-  var allowedTypes = [];
+let error = function () {
+  let allowedTypes = [];
 
-  for(var type in TYPES) {
+  for (let type in TYPES) {
     if (TYPES[type]) {
       allowedTypes.push(type);
     }
@@ -43,8 +43,8 @@ var error = function() {
   console.error('INVALID COMMIT MSG: ' + util.format.apply(null, arguments) + '.\nAllowed <type>: ' + allowedTypes.join(', '));
 };
 
-var validateMessage = function(message) {
-  var isValid = true;
+let validateMessage = function (message) {
+  let isValid = true;
 
   if (IGNORED.test(message)) {
     console.log('Commit message validation ignored.');
@@ -56,16 +56,16 @@ var validateMessage = function(message) {
     isValid = false;
   }
 
-  var match = PATTERN.exec(message);
+  let match = PATTERN.exec(message);
 
   if (!match) {
     error('does not match "<type>(<scope>): <subject>" ! was: ' + message);
     return false;
   }
 
-  var type = match[1];
-  var scope = match[3];
-  var subject = match[4];
+  let type = match[1];
+  let scope = match[3];
+  let subject = match[4];
 
   if (!TYPES.hasOwnProperty(type)) {
     error('"%s" is not allowed type !', type);
@@ -85,7 +85,7 @@ var validateMessage = function(message) {
 };
 
 
-var firstLineFromBuffer = function(buffer) {
+let firstLineFromBuffer = function (buffer) {
   return buffer.toString().split('\n').shift();
 };
 
@@ -94,11 +94,11 @@ exports.validateMessage = validateMessage;
 
 // Hacky start if not run by jasmine :-D
 if (process.argv.join('').indexOf('jasmine-node') === -1) {
-  var commitMsgFile = process.argv[2];
-  var incorrectLogFile = commitMsgFile.replace('COMMIT_EDITMSG', 'logs/incorrect-commit-msgs');
+  let commitMsgFile = process.argv[2];
+  let incorrectLogFile = commitMsgFile.replace('COMMIT_EDITMSG', 'logs/incorrect-commit-msgs');
 
   fs.readFile(commitMsgFile, function(err, buffer) {
-    var msg = firstLineFromBuffer(buffer);
+    let msg = firstLineFromBuffer(buffer);
 
     if (!validateMessage(msg)) {
       fs.appendFile(incorrectLogFile, msg + '\n', function() {
