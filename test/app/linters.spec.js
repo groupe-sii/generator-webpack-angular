@@ -16,12 +16,11 @@ module.exports = () => {
     });
 
     it('should add HTMLHint rules', () => {
-      assert.file('.htmlhintrc');
+      assert.file('src/.htmlhintrc');
     });
 
     it('should add ESLint rules', () => {
-      assert.file('.eslintrc');
-      assert.file('.eslintignore');
+      assert.file('src/.eslintrc');
     });
 
   });

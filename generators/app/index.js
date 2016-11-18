@@ -114,33 +114,28 @@ module.exports = class AppGenerator extends Base {
        */
       linters () {
         this.fs.copyTpl(
-          this.templatePath('_.htmlhintrc'),
-          this.destinationPath('.htmlhintrc')
+          this.templatePath('src/_.htmlhintrc'),
+          this.destinationPath('src/.htmlhintrc')
         );
 
         this.fs.copyTpl(
-          this.templatePath('_.eslintrc'),
-          this.destinationPath('.eslintrc')
-        );
-
-        this.fs.copyTpl(
-          this.templatePath('_.eslintignore'),
-          this.destinationPath('.eslintignore')
+          this.templatePath('src/_.eslintrc'),
+          this.destinationPath('src/.eslintrc')
         );
 
         switch (this.props.cssPreprocessor) {
           case 'css':
             this.fs.copyTpl(
-              this.templatePath('_.csslintrc'),
-              this.destinationPath('.csslintrc')
+              this.templatePath('src/_.csslintrc'),
+              this.destinationPath('src/.csslintrc')
             );
             break;
 
           default:
           case 'sass':
             this.fs.copyTpl(
-              this.templatePath('_.scsslintrc'),
-              this.destinationPath('.scsslintrc')
+              this.templatePath('src/_.scsslintrc'),
+              this.destinationPath('src/.scsslintrc')
             );
             break;
         }

@@ -23,7 +23,7 @@ module.exports = () => {
     });
 
     it('should use CSSLint rules', () => {
-      assert.file('.csslintrc');
+      assert.file('src/.csslintrc');
       assert.fileContent('package.json', 'csslint src/styles/');
       assert.fileContent('package.json', '"csslint"');
     });
@@ -58,7 +58,7 @@ module.exports = () => {
     });
 
     it('should use SCSSLint rules', () => {
-      assert.file('.scsslintrc');
+      assert.file('src/.scsslintrc');
       assert.fileContent('package.json', 'scss-lint src/styles/');
     });
 

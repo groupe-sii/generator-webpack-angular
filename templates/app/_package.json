@@ -8,7 +8,7 @@
     "serve": "webpack-dev-server --history-api-fallback --inline --progress --hot --env dev",
     "serve:prod": "webpack-dev-server --history-api-fallback --inline --progress --hot --env prod",
     "test": "npm run-script lint",
-    "lint": "eslint . && htmlhint .<% if (cssPreprocessor === 'css') { -%> && csslint src/styles/<% } else if (cssPreprocessor === 'sass') { -%> && scss-lint src/styles/<% } -%>"
+    "lint": "eslint src/ && htmlhint src/<% if (cssPreprocessor === 'css') { -%> && csslint src/styles/<% } else if (cssPreprocessor === 'sass') { -%> && scss-lint src/styles/<% } -%>"
   },
   "dependencies": {
     "angular": "^1.5.8",
