@@ -72,17 +72,17 @@ $ yo @groupe-sii/webpack-angular
 
 ## Roadmap
 
-- [x] Call APIs
+- [x] How to call REST APIs ? ($resource, Restangular)
 - [x] Handle environments
 - [x] angular-translate support
-- [x] UI Router has default router
-- [x] CSS preprocessors (Css, Sass, Less)
+- [x] UI Router as default router
+- [x] CSS preprocessors (CSS, Sass, Less)
 - [x] Angular modules choice (angular-animate, angular-touch, ...)
 - [x] UI Frameworks choice (angular-material, bootstrap)
 - [x] Linters (ESLint, HTMLHint, SCSSLint, CSSLint)
-- [x] autoprefixer integration
+- [x] PostCSS integration
 - [ ] Unit tests with Karma
-- [ ] REST API mock (json-server)
+- [ ] Mock server REST API with json-server
 - [ ] Landing page post generation
 - [ ] Dgeni to generate documentation
 - [ ] Sonar reporters
