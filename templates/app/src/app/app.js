@@ -10,7 +10,7 @@ import ngCookies from 'angular-cookies';
 <% if (ngMessages) { -%>
 import ngMessages from 'angular-messages';
 <% } -%>
-<% if (ngSanitize) { -%>
+<% if (ngSanitize || angularTranslate) { -%>
 import ngSanitize from 'angular-sanitize';
 <% } -%>
 <% if ((ngTouch || uiFramework === 'bootstrap') && uiFramework !== 'ngMaterial') { -%>
@@ -66,7 +66,7 @@ angular.module('app', [
 <% if (ngMessages) { -%>
   ngMessages,
 <% } -%>
-<% if (ngSanitize) { -%>
+<% if (ngSanitize || angularTranslate) { -%>
   ngSanitize,
 <% } -%>
 <% if ((ngTouch || uiFramework === 'bootstrap') && uiFramework !== 'ngMaterial') { -%>

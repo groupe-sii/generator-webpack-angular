@@ -43,6 +43,12 @@ module.exports = () => {
       assert.fileContent('src/config/README.md', 'Angular Translate');
     });
 
+    it('should activate angular-sanitize no matter the user selection (angular-translate peer dependency)', () => {
+      assert.fileContent('package.json', 'angular-sanitize');
+      assert.fileContent('src/app/app.js', 'import ngSanitize from \'angular-sanitize\'');
+      assert.fileContent('src/app/app.js', /angular\.module\([\s\S]*, [\s\S]*?ngSanitize/);
+    });
+
   });
 
 };
