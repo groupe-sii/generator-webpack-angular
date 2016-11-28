@@ -28,6 +28,12 @@ module.exports = () => {
       assert.fileContent('src/app/app.js', /angular\.module\([\s\S]*, [\s\S]*?ngMaterial/);
     });
 
+    it('should activate angular-animate no matter the user selection (angular-material peer dependency)', () => {
+      assert.fileContent('package.json', 'angular-animate');
+      assert.fileContent('src/app/app.js', 'import ngAnimate from \'angular-animate\'');
+      assert.fileContent('src/app/app.js', /angular\.module\([\s\S]*, [\s\S]*?ngAnimate/);
+    });
+
     it('should add material-design-icons', () => {
       assert.fileContent('package.json', 'material-design-icons');
       assert.file('src/styles/base/_typography.scss');
@@ -61,13 +67,13 @@ module.exports = () => {
       assert.fileContent('package.json', 'angular-ui-bootstrap');
     });
 
-    it('should activate angular-animate no matter the user selection (ui-bootstrap required dependency)', () => {
+    it('should activate angular-animate no matter the user selection (ui-bootstrap peer dependency)', () => {
       assert.fileContent('package.json', 'angular-animate');
       assert.fileContent('src/app/app.js', 'import ngAnimate from \'angular-animate\'');
       assert.fileContent('src/app/app.js', /angular\.module\([\s\S]*, [\s\S]*?ngAnimate/);
     });
 
-    it('should activate angular-touch no matter the user selection (ui-bootstrap required dependency)', () => {
+    it('should activate angular-touch no matter the user selection (ui-bootstrap peer dependency)', () => {
       assert.fileContent('package.json', 'angular-touch');
       assert.fileContent('src/app/app.js', 'import ngTouch from \'angular-touch\'');
       assert.fileContent('src/app/app.js', /angular\.module\([\s\S]*, [\s\S]*?ngTouch/);

@@ -1,6 +1,6 @@
 /* global process */
 import angular from 'angular';
-<% if (ngAnimate || uiFramework === 'bootstrap') { -%>
+<% if (ngAnimate || uiFramework === 'ngMaterial' || uiFramework === 'bootstrap') { -%>
 import ngAnimate from 'angular-animate';
 <% } -%>
 import ngAria from 'angular-aria';
@@ -56,7 +56,7 @@ import appRoute from './app.route';
 import appComponent from './app.component';
 
 angular.module('app', [
-<% if (ngAnimate || uiFramework === 'bootstrap') { -%>
+<% if (ngAnimate || uiFramework === 'ngMaterial' || uiFramework === 'bootstrap') { -%>
   ngAnimate,
 <% } -%>
   ngAria,

@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "angular": "^1.5.8",
-<% if (ngAnimate || uiFramework === 'bootstrap') { -%>
+<% if (ngAnimate || uiFramework === 'ngMaterial' || uiFramework === 'bootstrap') { -%>
     "angular-animate": "^1.5.8",
 <% } -%>
     "angular-aria": "^1.5.8",
