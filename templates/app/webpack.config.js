@@ -50,6 +50,12 @@ let common = {
       inject: 'body'
     }),
 
+    new webpack.DefinePlugin({
+      'process.env':{
+        'ENV_NAME': JSON.stringify(env)
+      }
+    }),
+
     new CopyWebpackPlugin([
 <% if (angularTranslate) { -%>
       { from: 'src/config/i18n' }

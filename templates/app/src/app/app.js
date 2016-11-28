@@ -1,3 +1,4 @@
+/* global process */
 import angular from 'angular';
 <% if (ngAnimate || uiFramework === 'bootstrap') { -%>
 import ngAnimate from 'angular-animate';
@@ -92,4 +93,5 @@ angular.module('app', [
 .config(appConfig)
 .config(appRoute)
 .constant('CONFIG', config)
+.constant('ENVIRONNEMENT', process.env.ENV_NAME)
 .component('app', appComponent);

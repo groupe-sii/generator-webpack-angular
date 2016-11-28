@@ -1,11 +1,16 @@
 /**
  * Application configuration.
  */
-export default function ($locationProvider<% if (angularTranslate) { -%>, $translateProvider<% } -%>) {
+export default function (ENVIRONNEMENT, $locationProvider<% if (angularTranslate) { -%>, $translateProvider<% } -%>) {
   'ngInject';
 
   // Reference: https://docs.angularjs.org/api/ng/provider/$locationProvider#html5Mode
   $locationProvider.html5Mode(true);
+
+  if (ENVIRONNEMENT === 'prod') {
+    //Reference : http://blog.thoughtram.io/angularjs/2014/12/22/exploring-angular-1.3-disabling-debug-info.html
+    $compileProvider.debugInfoEnabled(false);
+  }
 
 <% if (angularTranslate) { -%>
   // Reference: https://angular-translate.github.io/docs/#/guide/12_asynchronous-loading#asynchronous-loading_using-staticfilesloader
