@@ -8,7 +8,7 @@ export default function (ENVIRONNEMENT, $locationProvider<% if (angularTranslate
   $locationProvider.html5Mode(true);
 
   if (ENVIRONNEMENT === 'prod') {
-    //Reference : http://blog.thoughtram.io/angularjs/2014/12/22/exploring-angular-1.3-disabling-debug-info.html
+    // Reference : http://blog.thoughtram.io/angularjs/2014/12/22/exploring-angular-1.3-disabling-debug-info.html
     $compileProvider.debugInfoEnabled(false);
   }
 
