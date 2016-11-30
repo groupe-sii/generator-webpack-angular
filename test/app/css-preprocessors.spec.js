@@ -58,8 +58,9 @@ module.exports = () => {
     });
 
     it('should use SCSSLint rules', () => {
-      assert.file('src/.scsslintrc');
-      assert.fileContent('package.json', 'scss-lint src/styles/');
+      assert.file('src/.sass-lint.yml');
+      assert.fileContent('package.json', 'sass-lint -v -q');
+      assert.fileContent('package.json', '"sasslintConfig": "src/.sass-lint.yml",');
     });
 
   });

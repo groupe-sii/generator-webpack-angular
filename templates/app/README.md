@@ -15,7 +15,7 @@ These modules must be globally installed:
 <% if (cssPreprocessor === 'css') { -%>
 * [`csslint`](https://www.npmjs.com/package/csslint): Code analysis for CSS.
 <% } else if (cssPreprocessor === 'sass') { -%>
-* [`scss-lint`](https://github.com/brigade/scss-lint): Code analysis for Sass. A ruby command-line, must be installed with gem.
+* [`sass-lint`](https://github.com/sasstools/sass-lint): Code analysis for Sass.
 <% } -%>
 * [`karma-cli`](https://www.npmjs.com/package/karma-cli): The Karma command line interface.
 

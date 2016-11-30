@@ -2,13 +2,16 @@
   "name": "<%= _.slugify(appname) %>",
   "version": "0.0.1",
   "private": true,
+<% if (cssPreprocessor === 'sass') { -%>
+  "sasslintConfig": "src/.sass-lint.yml",
+<% } -%>
   "scripts": {
     "build": "rimraf dist && webpack --bail --progress --profile --env dev",
     "build:prod": "rimraf dist && webpack --bail --progress --profile --env prod",
     "serve": "webpack-dev-server --history-api-fallback --inline --progress --hot --env dev",
     "serve:prod": "webpack-dev-server --history-api-fallback --inline --progress --hot --env prod",
     "test": "npm run-script lint",
-    "lint": "eslint src/ && htmlhint src/<% if (cssPreprocessor === 'css') { -%> && csslint src/styles/<% } else if (cssPreprocessor === 'sass') { -%> && scss-lint src/styles/<% } -%>"
+    "lint": "eslint src/ && htmlhint src/<% if (cssPreprocessor === 'css') { -%> && csslint src/styles/<% } else if (cssPreprocessor === 'sass') { -%> && sass-lint -v -q<% } -%>"
   },
   "dependencies": {
     "angular": "^1.5.8",
@@ -78,6 +81,7 @@
     "rimraf": "^2.5.1",
 <% if (cssPreprocessor === 'sass') { -%>
     "sass-loader": "^4.0.2",
+    "sass-lint": "^1.10.2",
 <% } -%>
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2",
