@@ -1,7 +1,7 @@
 /**
  * Application configuration.
  */
-export default function (ENVIRONNEMENT, $locationProvider<% if (angularTranslate) { -%>, $translateProvider<% } -%>) {
+export default function (ENVIRONNEMENT, $compileProvider, $locationProvider<% if (angularTranslate) { -%>, $translateProvider<% } -%>) {
   'ngInject';
 
   // Reference: https://docs.angularjs.org/api/ng/provider/$locationProvider#html5Mode
