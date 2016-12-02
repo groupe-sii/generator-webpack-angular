@@ -26,7 +26,7 @@ Let's you choose between these frameworks:
 
 - [**ESLint**](http://eslint.org/): The pluggable linting utility for JavaScript and JSX.
 - [**HTMLHint**](http://htmlhint.com/): A Static Code Analysis Tool for HTML.
-- [**SCSSLint**](https://github.com/brigade/scss-lint): Configurable tool for writing clean and consistent SCSS.
+- [**SASSLint**](https://github.com/sasstools/sass-lint): Pure Node.js Sass linting.
 - [**CSSLint**](https://github.com/CSSLint/csslint): Automated linting of Cascading Stylesheets.
 
 ## Angular modules

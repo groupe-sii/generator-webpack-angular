@@ -84,7 +84,7 @@ $ yo @groupe-sii/webpack-angular
 - [x] CSS preprocessors (CSS, Sass, Less)
 - [x] Angular modules choice (angular-animate, angular-touch, ...)
 - [x] UI Frameworks choice (angular-material, bootstrap)
-- [x] Linters (ESLint, HTMLHint, SCSSLint, CSSLint)
+- [x] Linters (ESLint, HTMLHint, SASSLint, CSSLint)
 - [x] PostCSS integration
 - [ ] Unit tests with Karma
 - [ ] Mock server REST API with json-server
