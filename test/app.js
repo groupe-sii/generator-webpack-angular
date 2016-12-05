@@ -10,6 +10,7 @@ let testAngularTranslate = require('./app/angular-translate.spec');
 let testUIFrameworks = require('./app/ui-frameworks.spec');
 let testLinters = require('./app/linters.spec');
 let testCSSPreprocessors = require('./app/css-preprocessors.spec');
+let testSonar = require('./app/sonar.spec');
 let testJSONServer = require('./app/json-server.spec');
 let testAppName = require('./app/app-name.spec');
 
@@ -64,6 +65,7 @@ describe('app', () => {
   testUIFrameworks();
   testLinters();
   testCSSPreprocessors();
+  testSonar();
   testJSONServer();
   testAppName();
 

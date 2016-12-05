@@ -112,6 +112,10 @@ module.exports = class Prompt {
           value: 'angular-translate'
         },
         {
+          name: 'sonar-web-frontend-reporters, generate linters reporters for the SonarQube plugin',
+          value: 'sonar-web-frontend-reporters'
+        },
+        {
           name: 'json-server, a full fake REST API with zero coding in less than 30 seconds',
           value: 'json-server'
         }
@@ -155,6 +159,7 @@ module.exports = class Prompt {
 
       // Other modules
       generator.props.angularTranslate = answers.otherModules && answers.otherModules.includes('angular-translate');
+      generator.props.sonarWebFrontendReporters = answers.otherModules && answers.otherModules.includes('sonar-web-frontend-reporters');
       generator.props.jsonServer = answers.otherModules && answers.otherModules.includes('json-server');
 
       // Package manager

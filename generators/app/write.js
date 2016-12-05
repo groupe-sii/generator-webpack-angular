@@ -150,6 +150,25 @@ module.exports = {
   },
 
   /**
+   * Write configuration for sonar-web-frontend-reporters
+   */
+  sonarWebFrontendReporters () {
+    if (this.props.sonarWebFrontendReporters) {
+      this.fs.copyTpl(
+        this.templatePath('_.sreporterrc'),
+        this.destinationPath('.sreporterrc'),
+        this.props
+      );
+
+      this.fs.copyTpl(
+        this.templatePath('_sonar-project.properties'),
+        this.destinationPath('sonar-project.properties'),
+        this.props
+      );
+    }
+  },
+
+  /**
    * Write json-server examples
    */
   jsonServer () {

@@ -1,6 +1,5 @@
 {
-  "extends": "eslint:recommended",
-  "plugins": ["angular"],
+  "extends": [ "eslint:recommended", "angular" ],
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module"
