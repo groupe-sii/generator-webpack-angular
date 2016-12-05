@@ -12,10 +12,17 @@
     "serve": "webpack-dev-server --history-api-fallback --inline --progress --hot --env dev",
     "serve:prod": "webpack-dev-server --history-api-fallback --inline --progress --hot --env prod",
     "test": "npm run-script lint",
-    "lint": "eslint src/ && htmlhint src/<% if (cssPreprocessor === 'css') { -%> && csslint src/styles/<% } else if (cssPreprocessor === 'sass') { -%> && sass-lint -v<% } -%>"<% if (sonarWebFrontendReporters) { -%>,
-    "sonar:reporters": "node_modules/.bin/sreporter"
+    "lint": "eslint src/ && htmlhint src/<% if (cssPreprocessor === 'css') { -%> && csslint src/styles/<% } else if (cssPreprocessor === 'sass') { -%> && sass-lint -v<% } -%>"<% if (sonarWebFrontendReporters || jsonServer) { -%>,
 <% } -%>
-    "json-server": "json-server json-server/db.json --routes json-server/routes.json"<% } -%>
+<% if (sonarWebFrontendReporters) { -%>
+    "sonar:reporters": "node_modules/.bin/sreporter"<% if (jsonServer) { -%>,
+<% } else { -%>
+
+<% } -%>
+<% } -%>
+<% if (jsonServer) { -%>
+    "json-server": "json-server json-server/db.json --routes json-server/routes.json"
+<% } -%>
   },
   "dependencies": {
     "angular": "^1.5.8",
