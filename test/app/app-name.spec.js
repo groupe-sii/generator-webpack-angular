@@ -6,30 +6,28 @@ const assert = require('yeoman-assert');
 
 module.exports = () => {
 
-  describe('when using json-server', () => {
+  describe('when changing app name', () => {
 
     before(done => {
       this.generator = helpers
         .run(path.join(__dirname, '../../generators/app'))
         .withPrompts({
-          otherModules: 'json-server'
+          appName: 'Webpack Generator'
         })
         .toPromise()
         .then(() => done());
     });
 
-    it('should add json-server to the package.json', () => {
-      assert.fileContent('package.json', /"json-server"/);
-      assert.fileContent('package.json', /"npm-run-all --parallel serve json-server"/);
+    it('should the angular package name be app name', () => {
+      assert.fileContent('src/app/app.js', /angular\.module\('webpack-generator'/);
     });
 
-    it('should add localhost configuration in dev config file', () => {
-      assert.fileContent('src/config/config.dev.json', /"http:\/\/localhost:3000\/"/);
+    it('should the npm package name be app name', () => {
+      assert.fileContent('package.json', /"name": "webpack-generator"/);
     });
 
-    it('should generate default server files', () => {
-      assert.file('json-server/db.json');
-      assert.file('json-server/routes.json');
+    it('should the index.html title be app name', () => {
+      assert.fileContent('src/public/index.html', /<title>Webpack Generator<\/title>/);
     });
 
   });

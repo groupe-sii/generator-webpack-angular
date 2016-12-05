@@ -11,6 +11,7 @@ let testUIFrameworks = require('./app/ui-frameworks.spec');
 let testLinters = require('./app/linters.spec');
 let testCSSPreprocessors = require('./app/css-preprocessors.spec');
 let testJSONServer = require('./app/json-server.spec');
+let testAppName = require('./app/app-name.spec');
 
 /**
  * Test app generator.
@@ -64,4 +65,6 @@ describe('app', () => {
   testLinters();
   testCSSPreprocessors();
   testJSONServer();
+  testAppName();
+
 });
