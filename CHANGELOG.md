@@ -24,6 +24,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 [@aguele]: https://github.com/aguele
 [@jledentu]: https://github.com/jledentu
+[@ole]: https://github.com/liollury
 [@vgo]: https://github.com/ValentinGot
 
 [Unreleased]: https://github.com/groupe-sii/generator-webpack-angular/tree/develop
