@@ -10,6 +10,11 @@ module.exports = class Prompt {
    */
   static questions (generator) {
     return generator.prompt([{
+      type: 'input',
+      name: 'appName',
+      message: 'What\'s the name of your application package?',
+      store: true
+    },{
       type: 'checkbox',
       name: 'ngModules',
       message: 'What Angular modules do you want?',
@@ -128,6 +133,9 @@ module.exports = class Prompt {
         }
       ]
     }]).then(answers => {
+
+      //app name
+      generator.props.appName = answers.appName;
 
       // Angular modules
       generator.props.ngAnimate = answers.ngModules && answers.ngModules.includes('ngAnimate');
