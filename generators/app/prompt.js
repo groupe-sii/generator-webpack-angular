@@ -105,6 +105,10 @@ module.exports = class Prompt {
         {
           name: 'angular-translate (18n for your Angular app, made easy!)',
           value: 'angular-translate'
+        },
+        {
+          name: 'json-server, a full fake REST API with zero coding in less than 30 seconds',
+          value: 'json-server'
         }
       ]
     }, {
@@ -143,6 +147,7 @@ module.exports = class Prompt {
 
       // Other modules
       generator.props.angularTranslate = answers.otherModules && answers.otherModules.includes('angular-translate');
+      generator.props.jsonServer = answers.otherModules && answers.otherModules.includes('json-server');
 
       // Package manager
       generator.props.packageManager = answers.packageManager;

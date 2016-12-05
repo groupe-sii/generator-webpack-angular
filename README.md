@@ -28,6 +28,7 @@ What's included in details over [here](docs/STACK.md)
 ### Modules
 
 [![angular-translate](assets/angular-translate.png "Angular Translate")](https://angular-translate.github.io/)
+[![json-server](assets/json-server.png "JSON Server")](https://github.com/typicode/json-server)
 [![SonarQube](assets/sonar-qube.png "sonar-web-frontend-reporters")](https://github.com/groupe-sii/sonar-web-frontend-reporters)
 
 ### Package Managers
@@ -87,7 +88,7 @@ $ yo @groupe-sii/webpack-angular
 - [x] Linters (ESLint, HTMLHint, SASSLint, CSSLint)
 - [x] PostCSS integration
 - [ ] Unit tests with Karma
-- [ ] Mock server REST API with json-server
+- [x] Mock server REST API with json-server
 - [ ] Landing page post generation
 - [ ] Dgeni to generate documentation
 - [ ] Sonar reporters

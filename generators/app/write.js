@@ -147,6 +147,19 @@ module.exports = {
         this.props
       );
     }
+  },
+
+  /**
+   * Write json-server examples
+   */
+  jsonServer () {
+    if (this.props.jsonServer) {
+      this.fs.copyTpl(
+        this.templatePath('json-server'),
+        this.destinationPath('json-server'),
+        this.props
+      );
+    }
   }
 
 };
