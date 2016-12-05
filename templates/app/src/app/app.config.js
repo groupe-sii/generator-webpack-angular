@@ -8,7 +8,7 @@ export default function (ENVIRONNEMENT, $compileProvider, $locationProvider<% if
   $locationProvider.html5Mode(true);
 
   // Reference : http://blog.thoughtram.io/angularjs/2014/12/22/exploring-angular-1.3-disabling-debug-info.html
-  $compileProvider.debugInfoEnabled(ENVIRONNEMENT !== 'prod' || ENVIRONNEMENT !== 'production');
+  $compileProvider.debugInfoEnabled(ENVIRONNEMENT !== 'prod' && ENVIRONNEMENT !== 'production');
 
 <% if (angularTranslate) { -%>
   // Reference: https://angular-translate.github.io/docs/#/guide/12_asynchronous-loading#asynchronous-loading_using-staticfilesloader
