@@ -17,6 +17,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - **linting**: Add ESLint, HTMLHint, SCSSLint & CSSLint support from [@vgo]
 - **package-manager**: Let's you choose between **npm** or **Yarn** package manager from [@vgo]
 - **postcss**: Add PostCSS treatments from [@vgo]
+- **debug**: Disable the [debug info](https://docs.angularjs.org/api/ng/provider/$compileProvider#debugInfoEnabled) in production environement [@ole]
+- **sonar**: Generate linters reporters for the [SonarQube](https://github.com/groupe-sii/sonar-web-frontend-plugin) plugin [@vgo]
+- **json-server**: Allows you to easily create a RESTFull API for your application [@ole]
+- **application name**: Let's you choose the name of your application [@ole]
 
 [@aguele]: https://github.com/aguele
 [@jledentu]: https://github.com/jledentu
