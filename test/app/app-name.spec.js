@@ -18,16 +18,20 @@ module.exports = () => {
         .then(() => done());
     });
 
-    it('should the angular package name be app name', () => {
+    it('should use the slugified app name as the angular package', () => {
       assert.fileContent('src/app/app.js', /angular\.module\('webpack-generator'/);
     });
 
-    it('should the npm package name be app name', () => {
-      assert.fileContent('package.json', /"name": "webpack-generator"/);
+    it('should use the app name in the package.json', () => {
+      assert.jsonFileContent('package.json', {name: 'webpack-generator'});
     });
 
-    it('should the index.html title be app name', () => {
+    it('should use the app name for the HTML title', () => {
       assert.fileContent('src/public/index.html', /<title>Webpack Generator<\/title>/);
+    });
+
+    it('should use the slugified app name for the ng-app directive', () => {
+      assert.fileContent('src/public/index.html', /ng-app="webpack-generator"/);
     });
 
   });
