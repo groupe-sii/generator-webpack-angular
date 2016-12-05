@@ -20,6 +20,11 @@ module.exports = () => {
 
     it('should add json-server to the package.json', () => {
       assert.fileContent('package.json', /"json-server"/);
+      assert.fileContent('package.json', /"npm-run-all --parallel serve json-server"/);
+    });
+
+    it('should add localhost configuration in dev config file', () => {
+      assert.fileContent('src/config/config.dev.json', /"http:\/\/localhost:3000\/"/);
     });
 
     it('should generate default server files', () => {
