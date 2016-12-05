@@ -88,11 +88,12 @@ $ yo @groupe-sii/webpack-angular
 - [x] UI Frameworks choice (angular-material, bootstrap)
 - [x] Linters (ESLint, HTMLHint, SASSLint, CSSLint)
 - [x] PostCSS integration
-- [ ] Unit tests with Karma
 - [x] Mock server REST API with json-server
+- [x] Sonar reporters
+- [x] Ask user for application name
+- [ ] Unit tests with Karma
 - [ ] Landing page post generation
 - [ ] Dgeni to generate documentation
-- [ ] Sonar reporters
 
 ## License
 
