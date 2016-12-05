@@ -44,7 +44,8 @@ Let's you choose between these modules:
 Let's you choose between these modules:
 
 - [**angular-translate**](https://angular-translate.github.io/): i18n in your Angular apps, made easy.
-- **TODO** [**sonar-web-frontend-reporters**](https://github.com/groupe-sii/sonar-web-frontend-reporters): Create Front-End reporters for SonarQube.
+- [**sonar-web-frontend-reporters**](https://github.com/groupe-sii/sonar-web-frontend-reporters): Create Front-End reporters for SonarQube.
+- [**json-server**](https://github.com/typicode/json-server): Allows you to easily create a RESTFull API for your application.
 
 ## Features
 

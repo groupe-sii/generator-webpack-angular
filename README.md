@@ -68,10 +68,11 @@ $ yo @groupe-sii/webpack-angular
 
 #### Use NPM scripts
 
-- `npm run build` to build an optimized version of your application in /dist
-- `npm run build:prod` to build an optimized version of your application in /dist in a **production** environment
+- `npm start` to launch `npm run server` and `json-server` (if checked) in parallel
 - `npm run serve` to launch a webpack-dev-server server on your source files
 - `npm run serve:prod` to launch a webpack-dev-server server on your source files in a **production** environment
+- `npm run build` to build an optimized version of your application in /dist
+- `npm run build:prod` to build an optimized version of your application in /dist in a **production** environment
 - `npm run test` to launch your unit tests with Karma
 
 ## [Changelog](https://github.com/groupe-sii/generator-webpack-angular/blob/master/CHANGELOG.md)
