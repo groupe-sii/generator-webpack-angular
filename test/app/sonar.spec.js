@@ -12,6 +12,7 @@ module.exports = () => {
       this.generator = helpers
         .run(path.join(__dirname, '../../generators/app'))
         .withPrompts({
+          appName: 'Webpack Generator',
           otherModules: 'sonar-web-frontend-reporters'
         })
         .toPromise()
@@ -30,8 +31,17 @@ module.exports = () => {
       assert.file('.sreporterrc');
     });
 
+    it('should use the app name in the sonar-web-frontend-reporters configuration file', () => {
+      assert.jsonFileContent('.sreporterrc', {projectName: 'Webpack Generator'});
+    });
+
     it('should generate the sonar-web-frontend-plugin configuration file', () => {
       assert.file('sonar-project.properties');
+    });
+
+    it('should use the app name in the sonar-web-frontend-plugin configuration file', () => {
+      assert.fileContent('sonar-project.properties', /sonar.projectKey=webpack-generator/);
+      assert.fileContent('sonar-project.properties', /sonar.projectName=Webpack Generator/);
     });
 
     describe('when using CSS', () => {

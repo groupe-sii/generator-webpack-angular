@@ -1,5 +1,5 @@
 {
-  "projectName": "app",
+  "projectName": "<%= appName %>",
   "eslint": {
     "src": "src/**/*.js",
     "report": "reports/sonar/eslint.json",
