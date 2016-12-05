@@ -177,5 +177,8 @@ module.exports = class AppGenerator extends Base {
     this.log(`- ${chalk.yellow.bold(`${this.props.packageManager} run serve:prod`)} to launch a webpack-dev-server server on your source files in a ${chalk.yellow.bold('production')} environment`);
     this.log(`- ${chalk.yellow.bold(`${this.props.packageManager} run test`)} to launch your unit tests with Karma`);
     this.log(`- ${chalk.yellow.bold(`${this.props.packageManager} run lint`)} to launch linting process`);
+    if (this.props.sonarWebFrontendReporters) {
+      this.log(`- ${chalk.yellow.bold(`${this.props.packageManager} run sonar:reporters`)} to create the linters reporters for SonarQube plugin`);
+    }
   }
 };

@@ -11,7 +11,9 @@
     "serve": "webpack-dev-server --history-api-fallback --inline --progress --hot --env dev",
     "serve:prod": "webpack-dev-server --history-api-fallback --inline --progress --hot --env prod",
     "test": "npm run-script lint",
-    "lint": "eslint src/ && htmlhint src/<% if (cssPreprocessor === 'css') { -%> && csslint src/styles/<% } else if (cssPreprocessor === 'sass') { -%> && sass-lint -v -q<% } -%>"
+    "lint": "eslint src/ && htmlhint src/<% if (cssPreprocessor === 'css') { -%> && csslint src/styles/<% } else if (cssPreprocessor === 'sass') { -%> && sass-lint -v -q<% } -%>"<% if (sonarWebFrontendReporters) { -%>,
+    "sonar:reporters": "node_modules/.bin/sreporter"
+<% } -%>
   },
   "dependencies": {
     "angular": "^1.5.8",
@@ -80,8 +82,11 @@
     "raw-loader": "^0.5.1",
     "rimraf": "^2.5.1",
 <% if (cssPreprocessor === 'sass') { -%>
-    "sass-loader": "^4.0.2",
     "sass-lint": "^1.10.2",
+    "sass-loader": "^4.0.2",
+<% } -%>
+<% if (sonarWebFrontendReporters) { -%>
+    "sonar-web-frontend-reporters": "^3.0.0-beta",
 <% } -%>
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2",
