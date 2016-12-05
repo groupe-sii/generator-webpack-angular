@@ -105,6 +105,10 @@ module.exports = class Prompt {
         {
           name: 'angular-translate (18n for your Angular app, made easy!)',
           value: 'angular-translate'
+        },
+        {
+          name: 'sonar-web-frontend-reporters, generate linters reporters for the SonarQube plugin',
+          value: 'sonar-web-frontend-reporters'
         }
       ]
     }, {
@@ -143,6 +147,7 @@ module.exports = class Prompt {
 
       // Other modules
       generator.props.angularTranslate = answers.otherModules && answers.otherModules.includes('angular-translate');
+      generator.props.sonarWebFrontendReporters = answers.otherModules && answers.otherModules.includes('sonar-web-frontend-reporters');
 
       // Package manager
       generator.props.packageManager = answers.packageManager;
