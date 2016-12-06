@@ -74,6 +74,7 @@ $ yo @groupe-sii/webpack-angular
 - `npm run build` to build an optimized version of your application in /dist
 - `npm run build:prod` to build an optimized version of your application in /dist in a **production** environment
 - `npm run test` to launch your unit tests with Karma
+- `npm run docs` to launch Dgeni docs generator
 - `npm run lint` to launch linting process
 - `npm run sonar:reporters` to create the linters reporters for SonarQube plugin (Only if it was chosen)
 - `npm run json-server` to start a json-server (Only if it was chosen)
@@ -96,7 +97,7 @@ $ yo @groupe-sii/webpack-angular
 - [x] Ask user for application name
 - [ ] Unit tests with Karma
 - [ ] Landing page post generation
-- [ ] Dgeni to generate documentation
+- [x] Dgeni to generate documentation
 
 ## License
 

@@ -199,6 +199,22 @@ module.exports = {
         this.props
       );
     }
+  },
+
+  /**
+   * Write docs config
+   */
+  docs () {
+    this.fs.copyTpl(
+      this.templatePath('docs'),
+      this.destinationPath('docs'),
+      this.props
+    );
+    this.fs.copyTpl(
+      this.templatePath('tools/docs-generator'),
+      this.destinationPath('tools/docs-generator'),
+      this.props
+    );
   }
 
 };
