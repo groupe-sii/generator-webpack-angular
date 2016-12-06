@@ -199,15 +199,20 @@ module.exports = {
         this.props
       );
     }
-  }
+  },
 
   /**
-   * Write json-server examples
+   * Write docs config
    */
   docs () {
     this.fs.copyTpl(
-      this.templatePath('docs/_index.ngdoc'),
-      this.destinationPath('docs/index.ngdoc'),
+      this.templatePath('docs'),
+      this.destinationPath('docs'),
+      this.props
+    );
+    this.fs.copyTpl(
+      this.templatePath('tools/docs-generator'),
+      this.destinationPath('tools/docs-generator'),
       this.props
     );
   }
