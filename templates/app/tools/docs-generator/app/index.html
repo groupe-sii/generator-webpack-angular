@@ -1,0 +1,54 @@
+<!doctype html>
+<html ng-app="docApp">
+
+<head>
+	<!--
+		<base href="/" ></base>
+		-->
+	<title>Documentation du projet Hop</title>
+	<meta charset="utf-8"></meta>
+
+	<!-- build:css({docs/application/app,.tmp,src}) styles/vendor.css -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- bower:css -->
+	<!-- endbower -->
+	<!-- endbuild -->
+	<!-- build:css({.tmp,src,docs/application/app}) styles/app.css -->
+	<link rel="stylesheet" href="styles/docs.css" />
+	<link rel="stylesheet" href="styles/monokai-sublime.css" />
+	<!-- endbuild -->
+
+</head>
+
+<body>
+
+	<div class="container-fluid" ng-controller="DocsCtrl as docs">
+		<div ng-include="'src/main.html'"></div>
+	</div>
+
+	<!-- build:js({docs/application/app,.tmp_docs}) scripts/vendor.js -->
+	<!-- bower:js -->
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+	<script src="src/vendor/highlight.pack.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.3.0/ui-bootstrap-tpls.js"></script>
+	<!-- endbower -->
+	<!-- endbuild -->
+
+	<!-- build:js({docs/application/app,.tmp_docs}) scripts/app.js -->
+	<!-- inject:env_ignore -->
+	<!-- endinject -->
+	<script src="src/index.js"></script>
+	<script src="src/pre.directive.js"></script>
+	<script src="src/a.directive.js"></script>
+	<script src="src/docs.controller.js"></script>
+	<script src="src/navbar.controller.js"></script>
+	<script src="src/area-data.js"></script>
+	<script src="src/nav-data.js"></script>
+	<!-- inject:partials -->
+	<!-- angular templates will be automaticaly converted in js and inserted here -->
+	<!-- endinject -->
+	<!-- endbuild -->
+
+</body>
+
+</html>

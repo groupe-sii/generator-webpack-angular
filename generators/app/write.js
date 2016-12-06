@@ -201,4 +201,15 @@ module.exports = {
     }
   }
 
+  /**
+   * Write json-server examples
+   */
+  docs () {
+    this.fs.copyTpl(
+      this.templatePath('docs/_index.ngdoc'),
+      this.destinationPath('docs/index.ngdoc'),
+      this.props
+    );
+  }
+
 };

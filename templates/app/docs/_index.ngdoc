@@ -1,0 +1,13 @@
+@ngdoc overview
+
+@name Docs Top
+
+@description
+
+## Documentation du projet <%= appName %>
+
+Page d'accueil de la documentation.
+
+La documentation du code est disponible <a href="api">ici</a>.
+
+Le guide d'utilisation est disponible <a href="guide">ici</a>.
