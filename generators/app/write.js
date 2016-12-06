@@ -127,6 +127,10 @@ module.exports = {
         switch (this.props.cssPreprocessor) {
           case 'css':
           default:
+            this.fs.copyTpl(
+              this.templatePath('src/ui-angular-material/styles'),
+              this.destinationPath('src/styles')
+            );
             break;
 
           case 'sass':
