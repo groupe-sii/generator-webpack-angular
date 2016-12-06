@@ -3,8 +3,12 @@
 ## Table of contents
 
 1. [Prerequisites](#prerequisites)
-2. [Installation](#installation)
-3. [Linting](#linting)
+1. [Installation](#installation)
+1. [Scripts](#scripts)
+1. [Contribute - Git](#contribute-git)
+<% if (cssPreprocessor === 'sass' || cssPreprocessor === 'less') { -%>
+1. [Styling](#styling)
+<% } -%>
 
 ## Prerequisites
 
@@ -36,8 +40,22 @@ $ npm install --production  # Production (only `dependencies`)
 - `<%=packageManager -%> run test` to launch your unit tests with Karma
 - `<%=packageManager -%> run lint` to launch linting process
 <% if (sonarWebFrontendReporters) { -%>
-- `<%=packageManager -%> run lint` to create the linters reporters for SonarQube plugin
+- `<%=packageManager -%> run sonar:reporters` to create the linters reporters for SonarQube plugin
 <% } -%>
 <% if (jsonServer) { -%>
-- `<%=packageManager -%> run lint` to start a json-server
+- `<%=packageManager -%> run json-server` to start a json-server
+<% } -%>
+
+## Contribute - Git
+
+See [commits convention](COMMITS-CONVENTION.md).
+
+## Configuration
+
+See [configuration documentation](src/config/README.md).
+
+<% if (cssPreprocessor === 'sass' || cssPreprocessor === 'less') { -%>
+## Styling
+
+See styling [guidelines](src/styles/README.md).
 <% } -%>
