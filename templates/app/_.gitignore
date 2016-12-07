@@ -21,3 +21,6 @@ reports/
 out
 gen
 .vscode
+
+# logs folder
+dist-docs/
