@@ -14,6 +14,7 @@ let testSonar = require('./app/sonar.spec');
 let testJSONServer = require('./app/json-server.spec');
 let testAppName = require('./app/app-name.spec');
 let testDocsGenerator = require('./app/dgeni.spec');
+let testTests = require('./app/tests.spec');
 
 /**
  * Test app generator.
@@ -70,5 +71,6 @@ describe('app', () => {
   testJSONServer();
   testAppName();
   testDocsGenerator();
+  testTests();
 
 });
