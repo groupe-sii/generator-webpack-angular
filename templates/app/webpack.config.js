@@ -76,7 +76,7 @@ let common = {
 };
 
 // Development
-if (TARGET.startsWith('serve')) {
+if (TARGET !== undefined && TARGET.startsWith('serve')) {
   module.exports = merge.smart(common, {
     module: {
       loaders: [<% if (cssPreprocessor === 'sass') { %>
@@ -98,7 +98,7 @@ if (TARGET.startsWith('serve')) {
 }
 
 // Production
-if (TARGET.startsWith('build')) {
+if (TARGET !== undefined && TARGET.startsWith('build')) {
   module.exports = merge.smart(common, {
     output: {
       path: __dirname + '/dist',
