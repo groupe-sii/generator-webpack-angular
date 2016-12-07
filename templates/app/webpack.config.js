@@ -152,8 +152,20 @@ if (TARGET === 'test' || TARGET === 'test-watch') {
           plugins: ['istanbul']
         })],
         exclude: /node_modules/
-      }]
-    }
+      },<% if (cssPreprocessor === 'sass') { %>
+      {
+        test: /\.scss$/,
+        loaders: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
+      }<% } else if (cssPreprocessor === 'less') { %>
+      {
+        test: /\.less$/,
+        loaders: ['style-loader', 'css-loader', 'postcss-loader', 'less-loader']
+      }<% } else { %>
+      {
+        test: /\.css$/,
+        loaders: ['style-loader', 'css-loader', 'postcss-loader']
+      }<% } %>
+    ]}
   });
 }
 

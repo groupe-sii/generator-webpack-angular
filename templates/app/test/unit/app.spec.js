@@ -1,7 +1,7 @@
 import AppModule from '../../src/app/app';
 
 describe('App', () => {
-  let $rootScope, $state, $location, $componentController, $compile;
+  let <% if (angularTranslate) { %>$httpBackend, <% } %>$rootScope, $state, $location, $componentController, $compile;
 
   beforeEach(window.module(AppModule));
 
@@ -10,6 +10,10 @@ describe('App', () => {
     $state = $injector.get('$state');
     $location = $injector.get('$location');
     $compile = $injector.get('$compile');
+<% if (angularTranslate) { -%>
+    $httpBackend = $injector.get('$httpBackend');
+    $httpBackend.whenGET('fr-FR.json').respond(200, {});
+<% } -%>
   }));
 
   describe('Module', () => {
@@ -29,8 +33,8 @@ describe('App', () => {
       scope.$apply();
     });
 
-    it('Template should contains `My App`', () => {
-      template.html().should.equal('My App\n');
+    it('Template should contains a title', () => {
+      template.html().should.equal(<% if (angularTranslate) { -%>'app.title'<% } else { -%>'My App'<% } -%>);
     });
 
   });

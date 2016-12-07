@@ -94,4 +94,5 @@ export default angular.module('<%= _.slugify(appName) %>', [
 .config(appRoute)
 .constant('CONFIG', config)
 .constant('ENVIRONNEMENT', process.env.ENV_NAME)
-.component('app', appComponent);
+.component('app', appComponent)
+.name;

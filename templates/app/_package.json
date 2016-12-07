@@ -54,14 +54,13 @@
     "angular-translate": "^2.13.0",
     "angular-translate-loader-static-files": "^2.13.0",
 <% } -%>
-    "angular-ui-router": "^1.0.0-beta.3"<% if (resource === 'restangular') { %>,
-<% if (uiFramework === 'ngMaterial') { -%>
-    "material-design-icons": "^3.0.1",
-<% } -%>
 <% if (uiFramework === 'bootstrap') { -%>
     "angular-ui-bootstrap": "^2.2.0",
     "bootstrap": "^3.3.7",
 <% } -%>
+    "angular-ui-router": "^1.0.0-beta.3"<% if (uiFramework === 'ngMaterial') { -%>,
+    "material-design-icons": "^3.0.1"<% } -%>
+<% if (resource === 'restangular') { %>,
     "restangular": "^1.5.2"<% } %>
   },
   "devDependencies": {
