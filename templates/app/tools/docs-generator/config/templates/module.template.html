@@ -1,0 +1,51 @@
+{% extends "base.template.html" %}
+
+{% block content %}
+    <h1>
+      {% if doc.title %}{$ doc.title | marked $}{% else %}{$ doc.name | code $}{% endif %}
+    </h1>
+
+    <p>
+        {$ doc.description | marked $}
+    </p>
+    {% if doc.name != 'ng' and doc.name != 'auto' %}
+    <div class="component-breakdown">
+      <h2>Installation</h2>
+
+      <p>L'utilisation de wiredep dans le projet permet une inclusion automatique dans la page index.html parente.</p>
+
+      <p>Une référence dans le module principale de l'application suffit pour utiliser le module :</p>
+
+      {% code %}
+        angular.module('app', ['{$ doc.name $}']);
+      {% endcode %}
+    </div>
+    {% endif %}
+
+    <div class="component-breakdown">
+      <h2>Module APIs</h2>
+      {% for componentGroup in doc.componentGroups %}
+      <div>
+        <h3 class="component-heading" id="{$ componentGroup.groupType | dashCase $}">{$ componentGroup.groupType | title $}</h3>
+        <table class="definition-table">
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+          {% for component in componentGroup.components %}
+          <tr>
+            <td>{$ component.id | link(component.name, component) $}</td>
+            <td>{$ component.description | firstParagraph | marked $}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+      {% endfor %}
+    </div>
+
+    {% if doc.usage %}
+      <h2>Utilisation</h2>
+      {$ doc.usage | marked $}
+    {% endif %}
+
+{% endblock %}

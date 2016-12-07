@@ -59,7 +59,7 @@ module.exports = () => {
 
     it('should use SASSLint rules', () => {
       assert.file('src/.sass-lint.yml');
-      assert.fileContent('package.json', 'sass-lint -v -q');
+      assert.fileContent('package.json', 'sass-lint -v');
       assert.fileContent('package.json', '"sasslintConfig": "src/.sass-lint.yml",');
     });
 

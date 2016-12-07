@@ -1,5 +1,5 @@
 {
-  "name": "<%= _.slugify(appname) %>",
+  "name": "<%= _.slugify(appName) %>",
   "version": "0.0.1",
   "private": true,
 <% if (cssPreprocessor === 'sass') { -%>
@@ -8,11 +8,23 @@
   "scripts": {
     "build": "rimraf dist && webpack --bail --progress --profile --env dev",
     "build:prod": "rimraf dist && webpack --bail --progress --profile --env prod",
+    "start": "npm-run-all --parallel serve<% if (jsonServer) { -%> json-server<% } -%>",
     "serve": "webpack-dev-server --history-api-fallback --inline --progress --hot --env dev",
     "serve:prod": "webpack-dev-server --history-api-fallback --inline --progress --hot --env prod",
     "test": "npm run lint && karma start",
     "test-watch": "karma start --auto-watch --no-single-run",
-    "lint": "eslint src/ && htmlhint src/<% if (cssPreprocessor === 'css') { -%> && csslint src/styles/<% } else if (cssPreprocessor === 'sass') { -%> && sass-lint -v -q<% } -%>"
+    "docs": "node ./tools/docs-generator/index.js",
+    "lint": "eslint src/ && htmlhint src/<% if (cssPreprocessor === 'css') { -%> && csslint src/styles/<% } else if (cssPreprocessor === 'sass') { -%> && sass-lint -v<% } -%>"<% if (sonarWebFrontendReporters || jsonServer) { -%>,
+<% } -%>
+<% if (sonarWebFrontendReporters) { -%>
+    "sonar:reporters": "node_modules/.bin/sreporter"<% if (jsonServer) { -%>,
+<% } else { -%>
+
+<% } -%>
+<% } -%>
+<% if (jsonServer) { -%>
+    "json-server": "json-server json-server/db.json --routes json-server/routes.json"
+<% } -%>
   },
   "dependencies": {
     "angular": "^1.5.8",
@@ -61,10 +73,15 @@
     "chai": "^3.5.0",
     "copy-webpack-plugin": "^3.0.1",
     "css-loader": "^0.25.0",
+    "dgeni": "^0.4.2",
+    "dgeni-packages": "^0.16.0",
+    "copy": "^0.3.0",
+    "npm-run-all": "^3.1.2",
 <% if (cssPreprocessor === 'css') { -%>
     "csslint": "^1.0.4",
 <% } -%>
     "eslint": "^3.9.1",
+    "eslint-config-angular": "^0.5.0",
     "eslint-plugin-angular": "^1.4.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
@@ -92,8 +109,14 @@
     "raw-loader": "^0.5.1",
     "rimraf": "^2.5.1",
 <% if (cssPreprocessor === 'sass') { -%>
-    "sass-loader": "^4.0.2",
     "sass-lint": "^1.10.2",
+    "sass-loader": "^4.0.2",
+<% } -%>
+<% if (sonarWebFrontendReporters) { -%>
+    "sonar-web-frontend-reporters": "^3.0.0-beta",
+<% } -%>
+<% if (jsonServer) { -%>
+    "json-server": "^0.9.2",
 <% } -%>
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2",

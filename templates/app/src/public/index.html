@@ -1,8 +1,8 @@
 <!doctype html>
-<html ng-app="app" lang="en" ng-strict-di>
+<html ng-app="<%= _.slugify(appName) %>" lang="en" ng-strict-di>
 <head>
   <meta charset="UTF-8" />
-  <title>Angular App</title>
+  <title><%= appName %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <base href="/" />

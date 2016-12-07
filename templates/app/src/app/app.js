@@ -55,7 +55,7 @@ import appConfig from './app.config';
 import appRoute from './app.route';
 import appComponent from './app.component';
 
-export default angular.module('app', [
+export default angular.module('<%= _.slugify(appName) %>', [
 <% if (ngAnimate || uiFramework === 'ngMaterial' || uiFramework === 'bootstrap') { -%>
   ngAnimate,
 <% } -%>

@@ -28,6 +28,7 @@ What's included in details over [here](docs/STACK.md)
 ### Modules
 
 [![angular-translate](assets/angular-translate.png "Angular Translate")](https://angular-translate.github.io/)
+[![json-server](assets/json-server.png "JSON Server")](https://github.com/typicode/json-server)
 [![SonarQube](assets/sonar-qube.png "sonar-web-frontend-reporters")](https://github.com/groupe-sii/sonar-web-frontend-reporters)
 
 ### Package Managers
@@ -67,11 +68,16 @@ $ yo @groupe-sii/webpack-angular
 
 #### Use NPM scripts
 
-- `npm run build` to build an optimized version of your application in /dist
-- `npm run build:prod` to build an optimized version of your application in /dist in a **production** environment
+- `npm start` to launch `npm run server` and `json-server` (if checked) in parallel
 - `npm run serve` to launch a webpack-dev-server server on your source files
 - `npm run serve:prod` to launch a webpack-dev-server server on your source files in a **production** environment
-- `npm test` to launch your unit tests with Karma
+- `npm run build` to build an optimized version of your application in /dist
+- `npm run build:prod` to build an optimized version of your application in /dist in a **production** environment
+- `npm run test` to launch your unit tests with Karma
+- `npm run docs` to launch Dgeni docs generator
+- `npm run lint` to launch linting process
+- `npm run sonar:reporters` to create the linters reporters for SonarQube plugin (Only if it was chosen)
+- `npm run json-server` to start a json-server (Only if it was chosen)
 
 ## [Changelog](https://github.com/groupe-sii/generator-webpack-angular/blob/master/CHANGELOG.md)
 
@@ -86,12 +92,13 @@ $ yo @groupe-sii/webpack-angular
 - [x] UI Frameworks choice (angular-material, bootstrap)
 - [x] Linters (ESLint, HTMLHint, SASSLint, CSSLint)
 - [x] PostCSS integration
+- [x] Mock server REST API with json-server
+- [x] Sonar reporters
+- [x] Ask user for application name
 - [x] Unit tests with Karma and Mocha
 - [x] Code coverage
-- [ ] Mock server REST API with json-server
 - [ ] Landing page post generation
-- [ ] Dgeni to generate documentation
-- [ ] Sonar reporters
+- [x] Dgeni to generate documentation
 
 ## License
 

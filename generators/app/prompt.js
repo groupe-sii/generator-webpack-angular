@@ -10,6 +10,10 @@ module.exports = class Prompt {
    */
   static questions (generator) {
     return generator.prompt([{
+      type: 'input',
+      name: 'appName',
+      message: 'What\'s the name of your application package?'
+    }, {
       type: 'checkbox',
       name: 'ngModules',
       message: 'What Angular modules do you want?',
@@ -105,6 +109,14 @@ module.exports = class Prompt {
         {
           name: 'angular-translate (18n for your Angular app, made easy!)',
           value: 'angular-translate'
+        },
+        {
+          name: 'sonar-web-frontend-reporters, generate linters reporters for the SonarQube plugin',
+          value: 'sonar-web-frontend-reporters'
+        },
+        {
+          name: 'json-server, a full fake REST API with zero coding in less than 30 seconds',
+          value: 'json-server'
         }
       ]
     }, {
@@ -125,6 +137,9 @@ module.exports = class Prompt {
       ]
     }]).then(answers => {
 
+      // App name
+      generator.props.appName = answers.appName;
+
       // Angular modules
       generator.props.ngAnimate = answers.ngModules && answers.ngModules.includes('ngAnimate');
       generator.props.ngCookies = answers.ngModules && answers.ngModules.includes('ngCookies');
@@ -143,6 +158,8 @@ module.exports = class Prompt {
 
       // Other modules
       generator.props.angularTranslate = answers.otherModules && answers.otherModules.includes('angular-translate');
+      generator.props.sonarWebFrontendReporters = answers.otherModules && answers.otherModules.includes('sonar-web-frontend-reporters');
+      generator.props.jsonServer = answers.otherModules && answers.otherModules.includes('json-server');
 
       // Package manager
       generator.props.packageManager = answers.packageManager;

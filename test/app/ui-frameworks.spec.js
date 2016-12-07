@@ -36,16 +36,56 @@ module.exports = () => {
 
     it('should add material-design-icons', () => {
       assert.fileContent('package.json', 'material-design-icons');
-      assert.file('src/styles/base/_typography.scss');
-      assert.file('src/styles/vendors/_material-icons.scss');
-      assert.fileContent('src/styles/main.scss', '@import \'vendors/material-icons\'');
-      assert.fileContent('src/styles/main.scss', '@import \'base/typography\'');
     });
 
     it('shouldn\'t add angular-touch', () => {
       assert.noFileContent('package.json', 'angular-touch');
       assert.noFileContent('src/app/app.js', 'import ngTouch from \'angular-touch\'');
       assert.noFileContent('src/app/app.js', /angular\.module\([\s\S]*, [\s\S]*?ngTouch/);
+    });
+
+    describe('when using Sass', () => {
+
+      before(done => {
+        this.generator = helpers
+          .run(path.join(__dirname, '../../generators/app'))
+          .withPrompts({
+            cssPreprocessor: 'sass',
+            uiFramework: 'ngMaterial'
+          })
+          .toPromise()
+          .then(() => done());
+      });
+
+      it('should add material-design-icons', () => {
+        assert.file('src/styles/base/_typography.scss');
+        assert.file('src/styles/vendors/_material-icons.scss');
+        assert.fileContent('src/styles/main.scss', '@import \'vendors/material-icons\'');
+        assert.fileContent('src/styles/main.scss', '@import \'base/typography\'');
+      });
+
+    });
+
+    describe('when using Less', () => {
+
+      before(done => {
+        this.generator = helpers
+          .run(path.join(__dirname, '../../generators/app'))
+          .withPrompts({
+            cssPreprocessor: 'less',
+            uiFramework: 'ngMaterial'
+          })
+          .toPromise()
+          .then(() => done());
+      });
+
+      it('should add material-design-icons', () => {
+        assert.file('src/styles/base/_typography.less');
+        assert.file('src/styles/vendors/_material-icons.less');
+        assert.fileContent('src/styles/main.less', '@import \'vendors/material-icons\'');
+        assert.fileContent('src/styles/main.less', '@import \'base/typography\'');
+      });
+
     });
 
   });

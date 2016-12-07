@@ -83,11 +83,11 @@ if (TARGET.startsWith('serve')) {
       {
         test: /\.scss$/,
         loaders: ['style-loader', 'css-loader?sourceMap&importLoaders=1', 'postcss-loader', 'sass-loader?sourceMap']
-      }<% } else if (cssPreprocessor === 'less') { %>,
+      }<% } else if (cssPreprocessor === 'less') { %>
       {
         test: /\.less$/,
         loaders: ['style-loader', 'css-loader?sourceMap&importLoaders=1', 'postcss-loader', 'less-loader?sourceMap']
-      }<% } else { %>,
+      }<% } else { %>
       {
         test: /\.css$/,
         loaders: [ 'style-loader', 'css-loader?importLoaders=1', 'postcss-loader' ]

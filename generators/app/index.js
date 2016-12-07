@@ -171,11 +171,18 @@ module.exports = class AppGenerator extends Base {
    */
   end () {
     this.log(`It's time to use ${this.props.packageManager.charAt(0).toUpperCase() + this.props.packageManager.slice(1)} scripts:`);
-    this.log(`- ${chalk.yellow.bold(`${this.props.packageManager} run build`)} to build an optimized version of your application in folder /dist`);
-    this.log(`- ${chalk.yellow.bold(`${this.props.packageManager} run build:prod`)} to build an optimized version of your application in folder /dist in a ${chalk.yellow.bold('production')} environment`);
+    this.log(`- ${chalk.yellow.bold(`${this.props.packageManager} start`)} to launch ${chalk.bold('npm run server')} and ${chalk.bold('json-server')} (if checked in generator) in parallel`);
     this.log(`- ${chalk.yellow.bold(`${this.props.packageManager} run serve`)} to launch a webpack-dev-server server on your source files`);
     this.log(`- ${chalk.yellow.bold(`${this.props.packageManager} run serve:prod`)} to launch a webpack-dev-server server on your source files in a ${chalk.yellow.bold('production')} environment`);
+    this.log(`- ${chalk.yellow.bold(`${this.props.packageManager} run build`)} to build an optimized version of your application in folder /dist`);
+    this.log(`- ${chalk.yellow.bold(`${this.props.packageManager} run build:prod`)} to build an optimized version of your application in folder /dist in a ${chalk.yellow.bold('production')} environment`);
     this.log(`- ${chalk.yellow.bold(`${this.props.packageManager} run test`)} to launch your unit tests with Karma`);
     this.log(`- ${chalk.yellow.bold(`${this.props.packageManager} run lint`)} to launch linting process`);
+    if (this.props.sonarWebFrontendReporters) {
+      this.log(`- ${chalk.yellow.bold(`${this.props.packageManager} run sonar:reporters`)} to create the linters reporters for SonarQube plugin`);
+    }
+    if (this.props.jsonServer) {
+      this.log(`- ${chalk.yellow.bold(`${this.props.packageManager} run json-server`)} to start a json-server`);
+    }
   }
 };

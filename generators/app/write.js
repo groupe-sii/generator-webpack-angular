@@ -124,11 +124,31 @@ module.exports = {
   ui () {
     switch (this.props.uiFramework) {
       case 'ngMaterial':
-        this.fs.copyTpl(
-          this.templatePath('src/ui-angular-material'),
-          this.destinationPath('src/styles'),
-          this.props
-        );
+        switch (this.props.cssPreprocessor) {
+          case 'css':
+          default:
+            this.fs.copyTpl(
+              this.templatePath('src/ui-angular-material/styles'),
+              this.destinationPath('src/styles')
+            );
+            break;
+
+          case 'sass':
+            this.fs.copyTpl(
+              this.templatePath('src/ui-angular-material/styles-sass'),
+              this.destinationPath('src/styles'),
+              this.props
+            );
+            break;
+
+          case 'less':
+            this.fs.copyTpl(
+              this.templatePath('src/ui-angular-material/styles-less'),
+              this.destinationPath('src/styles'),
+              this.props
+            );
+            break;
+        }
         break;
 
       default:
@@ -147,6 +167,54 @@ module.exports = {
         this.props
       );
     }
+  },
+
+  /**
+   * Write configuration for sonar-web-frontend-reporters
+   */
+  sonarWebFrontendReporters () {
+    if (this.props.sonarWebFrontendReporters) {
+      this.fs.copyTpl(
+        this.templatePath('_.sreporterrc'),
+        this.destinationPath('.sreporterrc'),
+        this.props
+      );
+
+      this.fs.copyTpl(
+        this.templatePath('_sonar-project.properties'),
+        this.destinationPath('sonar-project.properties'),
+        this.props
+      );
+    }
+  },
+
+  /**
+   * Write json-server examples
+   */
+  jsonServer () {
+    if (this.props.jsonServer) {
+      this.fs.copyTpl(
+        this.templatePath('json-server'),
+        this.destinationPath('json-server'),
+        this.props
+      );
+    }
+  },
+
+  /**
+   * Write docs config
+   */
+  docs () {
+    this.fs.copyTpl(
+      this.templatePath('docs'),
+      this.destinationPath('docs'),
+      this.props
+    );
+    this.fs.copyTpl(
+      this.templatePath('tools/docs-generator'),
+      this.destinationPath('tools/docs-generator'),
+      this.props
+    );
   },
 
   /**

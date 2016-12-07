@@ -1,0 +1,21 @@
+@ngdoc overview
+
+@name API Top
+
+@description
+
+# API
+
+L'architecture du projet est située ci-dessous :
+
+### Légende
+
+[![Légende](./images/png/legend.png)](./images/png/legend.png)
+
+### Tout confondu
+
+[![All](./images/png/all.png)](./images/png/all.png)
+
+### Les modules
+
+[![Modules](./images/png/modules.png)](./images/png/modules.png)
