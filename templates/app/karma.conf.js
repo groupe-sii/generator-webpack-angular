@@ -58,21 +58,19 @@ module.exports = function (config) {
     },
 
     coverageReporter: {
-      dir: 'coverage/',
+      dir: '<%= (sonarWebFrontendReporters) ? "reports/sonar/" : "coverage/" -%>',
       reporters: [
         {
-          type: 'json',
-          subdir: '.',
-          file: 'coverage.json'
-        },
-        {
           type: 'lcovonly',
-          subdir: '.'
-        },
+          subdir: '.',
+          file: 'js-ut.lcov'
+        }<% if (!sonarWebFrontendReporters) { -%>,
         {
           type: 'html',
           subdir: 'html'
         }
+<% } -%>
+
       ]
     },
 

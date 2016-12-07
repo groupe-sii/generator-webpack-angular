@@ -234,7 +234,8 @@ module.exports = {
 
     this.fs.copyTpl(
       this.templatePath('karma.conf.js'),
-      this.destinationPath('karma.conf.js')
+      this.destinationPath('karma.conf.js'),
+      this.props
     );
   }
 
