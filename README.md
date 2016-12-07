@@ -39,27 +39,27 @@ What's included in details over [here](docs/STACK.md)
 
 ### Install
 
-##### Install required tools `yo`:
+#### Install required tools `yo`:
 
 ```sh
 $ npm install -g yo
 ```
 
-##### Install `generator-webpack-angular`:
+#### Install `generator-webpack-angular`:
 
 ```sh
-$ npm install generator-webpack-angular
+$ npm install @groupe-sii/generator-webpack-angular
 ```
 
 ### Run
 
-##### Create a new directory, and go into:
+#### Create a new directory, and go into:
 
 ```sh
 $ mkdir my-new-project && cd my-new-project
 ```
 
-##### Run `yo @groupe-sii/webpack-angular`, and select desired technologies:
+#### Run `yo @groupe-sii/webpack-angular`, and select desired technologies:
 
 ```sh
 $ yo @groupe-sii/webpack-angular
@@ -71,7 +71,7 @@ $ yo @groupe-sii/webpack-angular
 - `npm run build:prod` to build an optimized version of your application in /dist in a **production** environment
 - `npm run serve` to launch a webpack-dev-server server on your source files
 - `npm run serve:prod` to launch a webpack-dev-server server on your source files in a **production** environment
-- `npm run test` to launch your unit tests with Karma
+- `npm test` to launch your unit tests with Karma
 
 ## [Changelog](https://github.com/groupe-sii/generator-webpack-angular/blob/master/CHANGELOG.md)
 
@@ -86,7 +86,8 @@ $ yo @groupe-sii/webpack-angular
 - [x] UI Frameworks choice (angular-material, bootstrap)
 - [x] Linters (ESLint, HTMLHint, SASSLint, CSSLint)
 - [x] PostCSS integration
-- [ ] Unit tests with Karma
+- [x] Unit tests with Karma and Mocha
+- [x] Code coverage
 - [ ] Mock server REST API with json-server
 - [ ] Landing page post generation
 - [ ] Dgeni to generate documentation

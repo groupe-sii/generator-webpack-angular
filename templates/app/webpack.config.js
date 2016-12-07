@@ -137,8 +137,23 @@ if (TARGET.startsWith('build')) {
 }
 
 // Test
-if (TARGET === 'test') {
+// Test
+if (TARGET === 'test' || TARGET === 'test-watch') {
   module.exports = merge.smart(common, {
+    entry: {},
 
+    devtool: 'inline-source-map',
+
+    module: {
+      loaders: [{
+        test: /\.js$/,
+        loaders: ['ng-annotate', 'babel?' + JSON.stringify({
+          presets: ['es2015'],
+          plugins: ['istanbul']
+        })],
+        exclude: /node_modules/
+      }]
+    }
   });
 }
+

@@ -147,6 +147,22 @@ module.exports = {
         this.props
       );
     }
+  },
+
+  /**
+   * Write test files
+   */
+  tests () {
+    this.fs.copyTpl(
+      this.templatePath('test'),
+      this.destinationPath('test'),
+      this.props
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('karma.conf.js'),
+      this.destinationPath('karma.conf.js')
+    );
   }
 
 };

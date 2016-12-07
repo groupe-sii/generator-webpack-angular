@@ -5,6 +5,7 @@
 1. [Prerequisites](#prerequisites)
 2. [Installation](#installation)
 3. [Linting](#linting)
+4. [Tests](#tests)
 
 ## Prerequisites
 
@@ -17,7 +18,6 @@ These modules must be globally installed:
 <% } else if (cssPreprocessor === 'sass') { -%>
 * [`sass-lint`](https://github.com/sasstools/sass-lint): Code analysis for Sass.
 <% } -%>
-* [`karma-cli`](https://www.npmjs.com/package/karma-cli): The Karma command line interface.
 
 ## Installation
 
@@ -28,3 +28,13 @@ $ npm install --production  # Production (only `dependencies`)
 
 ## Linting
 
+```sh
+$ npm run lint
+```
+
+## Tests
+
+```sh
+$ npm test           # Run linting and unit tests
+$ npm run test-watch # Run unit tests (watch mode)
+```
