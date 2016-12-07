@@ -1,14 +1,20 @@
 'use strict';
 
-const path = require('path');
-const fs = require('fs');
-const webpack = require('webpack');
-const merge = require('webpack-merge');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const path = require('path'),
+  fs = require('fs'),
+  webpack = require('webpack'),
+  merge = require('webpack-merge'),
+  HtmlWebpackPlugin = require('html-webpack-plugin'),
+  ExtractTextPlugin = require('extract-text-webpack-plugin'),
+  CopyWebpackPlugin = require('copy-webpack-plugin');
 
 let TARGET = process.env.npm_lifecycle_event;
+
+// If a reference to 'karma' is found on the process arguments, then we should launch webpack in `test` mode
+let hasKarmaRef = process.argv.map((arg) => arg.includes('karma')).some((arg) => arg);
+if (TARGET === undefined && hasKarmaRef) {
+  TARGET = 'test';
+}
 
 // Determinate application environment
 let configPath = `${__dirname}/src/config`;
@@ -137,8 +143,7 @@ if (TARGET !== undefined && TARGET.startsWith('build')) {
 }
 
 // Test
-// Test
-if (TARGET === 'test' || TARGET === 'test-watch') {
+if (TARGET !== undefined && (TARGET === 'test' || TARGET === 'test-watch')) {
   module.exports = merge.smart(common, {
     entry: {},
 
