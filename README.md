@@ -31,6 +31,9 @@ What's included in details over [here](docs/STACK.md)
 [![json-server](assets/json-server.png "JSON Server")](https://github.com/typicode/json-server)
 [![SonarQube](assets/sonar-qube.png "sonar-web-frontend-reporters")](https://github.com/groupe-sii/sonar-web-frontend-reporters)
 
+### Doc generator
+[![dgeni](assets/dgeni.png "DGeni")](https://github.com/angular/dgeni)
+
 ### Package Managers
 
 [![npm](assets/npm.png "npm")](https://www.npmjs.com/)

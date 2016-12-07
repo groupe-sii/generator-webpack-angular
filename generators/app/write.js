@@ -206,8 +206,13 @@ module.exports = {
    */
   docs () {
     this.fs.copyTpl(
-      this.templatePath('docs'),
+      this.templatePath('docs/**/!(_index.ngdoc)'),
       this.destinationPath('docs'),
+      this.props
+    );
+    this.fs.copyTpl(
+      this.templatePath('docs/_index.ngdoc'),
+      this.destinationPath('docs/index.ngdoc'),
       this.props
     );
     this.fs.copyTpl(

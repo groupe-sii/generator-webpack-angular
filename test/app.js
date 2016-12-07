@@ -13,6 +13,7 @@ let testCSSPreprocessors = require('./app/css-preprocessors.spec');
 let testSonar = require('./app/sonar.spec');
 let testJSONServer = require('./app/json-server.spec');
 let testAppName = require('./app/app-name.spec');
+let testDocsGenerator = require('./app/dgeni.spec');
 
 /**
  * Test app generator.
@@ -68,5 +69,6 @@ describe('app', () => {
   testSonar();
   testJSONServer();
   testAppName();
+  testDocsGenerator();
 
 });

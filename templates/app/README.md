@@ -55,6 +55,10 @@ See [commits convention](COMMITS-CONVENTION.md).
 See [configuration documentation](src/config/README.md).
 
 <% if (cssPreprocessor === 'sass' || cssPreprocessor === 'less') { -%>
+## Docs generator
+
+See [docs generator documentation](tools/docs-generator/README.md).
+
 ## Styling
 
 See styling [guidelines](src/styles/README.md).
