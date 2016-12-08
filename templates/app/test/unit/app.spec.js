@@ -1,13 +1,11 @@
-import 'angular';
-import 'angular-mocks';
 import AppModule from '../../src/app/app';
 
 describe('App', () => {
   let <% if (angularTranslate) { %>$httpBackend, <% } %>$rootScope, $state, $location, $compile;
 
-  beforeEach(angular.mock.module(AppModule));
+  beforeEach(window.module(AppModule));
 
-  beforeEach(angular.mock.inject(($injector) => {
+  beforeEach(inject(($injector) => {
     $rootScope = $injector.get('$rootScope');
     $state = $injector.get('$state');
     $location = $injector.get('$location');

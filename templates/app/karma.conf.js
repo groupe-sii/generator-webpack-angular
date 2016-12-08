@@ -15,7 +15,7 @@ module.exports = function (config) {
 
     // list of files / patterns to load in the browser
     files: [
-      {pattern: 'test/**/*.spec.js'}
+      {pattern: 'test/unit.spec.js'}
     ],
 
     // list of files to exclude
@@ -24,7 +24,7 @@ module.exports = function (config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'test/unit/**/*.spec.js': ['webpack', 'sourcemap'<% if (sonarWebFrontendReporters) { -%>, 'junit'<% } -%>]
+      'test/unit.spec.js': ['webpack', 'sourcemap'<% if (sonarWebFrontendReporters) { -%>, 'junit'<% } -%>]
     },
 
     // test results reporter to use
