@@ -57,7 +57,35 @@ See [configuration documentation](src/config/README.md).
 <% if (cssPreprocessor === 'sass' || cssPreprocessor === 'less') { -%>
 ## Docs generator
 
-See [docs generator documentation](tools/docs-generator/README.md).
+Angular documentation is generated with [DGeni](https://github.com/angular/dgeni)
+
+Docs generation is performed by [webpack-angular-dgeni-plugin](https://github.com/groupe-sii/webpack-angular-dgeni-plugin/)
+
+Please refer to [Angular documentation](https://github.com/angular/angular.js/wiki/Writing-AngularJS-Documentation) for doc's comments generation.
+
+### Configuration
+
+It's possible to include or exclude other glob link (default: `./src/app/**/*`) in file `./webpack.config.js` in `build` target.
+
+You can also configure generation path with `output` variable under `.webpack.config.js`
+
+Example : 
+
+```js
+new DocsGeneratorPlugin({
+        enable       : docEnable,
+        staticContent: './docs',
+        sources      : {
+          include : 'src/app/**/**/*.js',
+          basePath: 'src/app'
+        },
+        output       : 'dist-docs'
+      })
+```
+
+###Static documentation
+
+Static documentation is written in markdown format under `./docs`
 
 ## Styling
 
