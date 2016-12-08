@@ -20,7 +20,7 @@ module.exports = () => {
     });
 
     it('should add ESLint rules', () => {
-      assert.file('src/.eslintrc');
+      assert.file('.eslintrc');
     });
 
   });

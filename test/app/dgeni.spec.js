@@ -20,8 +20,6 @@ module.exports = () => {
 
     it('should add dgeni to the package.json', () => {
       assert.fileContent('package.json', /"node \.\/tools\/docs-generator\/index\.js"/);
-      assert.fileContent('package.json', /"dgeni-packages"/);
-      assert.fileContent('package.json', /"dgeni"/);
     });
 
     it('should have default ngdocs files', () => {
