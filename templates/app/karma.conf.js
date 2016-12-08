@@ -15,9 +15,7 @@ module.exports = function (config) {
 
     // list of files / patterns to load in the browser
     files: [
-      {
-        pattern: 'test/unit.spec.js'
-      }
+      {pattern: 'test/**/*.spec.js'}
     ],
 
     // list of files to exclude
@@ -26,13 +24,13 @@ module.exports = function (config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'test/unit.spec.js': ['webpack', 'sourcemap']
+      'test/unit/**/*.spec.js': ['webpack', 'sourcemap'<% if (sonarWebFrontendReporters) { -%>, 'junit'<% } -%>]
     },
 
     // test results reporter to use
-    // possible values: 'dots', 'progress'
+    // possible values: 'dots', 'progress', 'spec'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['spec', 'coverage'],
+    reporters: ['spec', <% if (sonarWebFrontendReporters) { -%>'junit', <% } -%>'coverage'],
 
     // enable / disable colors in the output (reporters and logs)
     colors: true,
@@ -56,6 +54,14 @@ module.exports = function (config) {
       suppressSkipped: true, // do not print information about skipped tests
       showSpecTiming: false  // print the time elapsed for each spec
     },
+
+<% if (sonarWebFrontendReporters) { -%>
+    // Reference: https://github.com/groupe-sii/karma-junit7-sonarqube-reporter
+    junitReporter: {
+      outputFile: 'reports/sonar/js-ut.xml',
+        suite: ''
+    },
+<% } -%>
 
     coverageReporter: {
       dir: '<%= (sonarWebFrontendReporters) ? "reports/sonar/" : "coverage/" -%>',
