@@ -74,10 +74,9 @@ $ yo @groupe-sii/webpack-angular
 - `npm start` to launch `npm run server` and `json-server` (if checked) in parallel
 - `npm run serve` to launch a webpack-dev-server server on your source files
 - `npm run serve:prod` to launch a webpack-dev-server server on your source files in a **production** environment
-- `npm run build` to build an optimized version of your application in /dist
-- `npm run build:prod` to build an optimized version of your application in /dist in a **production** environment
+- `npm run build` to build an optimized version of your application in /dist + docs generation
+- `npm run build:prod` to build an optimized version of your application in /dist in a **production** environment + docs generation
 - `npm run test` to launch your unit tests with Karma
-- `npm run docs` to launch Dgeni docs generator
 - `npm run lint` to launch linting process
 - `npm run sonar:reporters` to create the linters reporters for SonarQube plugin (Only if it was chosen)
 - `npm run json-server` to start a json-server (Only if it was chosen)

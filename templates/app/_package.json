@@ -13,7 +13,6 @@
     "serve:prod": "webpack-dev-server --history-api-fallback --inline --progress --hot --env prod",
     "test": "npm run lint && karma start",
     "test-watch": "karma start --auto-watch --no-single-run",
-    "docs": "node ./tools/docs-generator/index.js",
     "lint": "eslint src/ && htmlhint src/<% if (cssPreprocessor === 'css') { -%> && csslint src/styles/<% } else if (cssPreprocessor === 'sass') { -%> && sass-lint -v<% } -%>"<% if (sonarWebFrontendReporters || jsonServer) { -%>,
 <% } -%>
 <% if (sonarWebFrontendReporters) { -%>
