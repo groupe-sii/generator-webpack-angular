@@ -6,7 +6,8 @@ const path = require('path'),
   merge = require('webpack-merge'),
   HtmlWebpackPlugin = require('html-webpack-plugin'),
   ExtractTextPlugin = require('extract-text-webpack-plugin'),
-  CopyWebpackPlugin = require('copy-webpack-plugin');
+  CopyWebpackPlugin = require('copy-webpack-plugin'),
+  DocsGeneratorPlugin = require('webpack-angular-dgeni-plugin');
 
 let TARGET = process.env.npm_lifecycle_event;
 
@@ -19,6 +20,7 @@ if (TARGET === undefined && hasKarmaRef) {
 // Determinate application environment
 let configPath = `${__dirname}/src/config`;
 let envPos = process.argv.indexOf('--env');
+let docEnable = process.argv.indexOf('--docs') !== -1;
 let env = (envPos !== -1 && fs.existsSync(`${configPath}/config.${process.argv[++envPos]}.json`)) ? process.argv[envPos] : 'dev';
 
 let common = {
@@ -137,7 +139,17 @@ if (TARGET !== undefined && TARGET.startsWith('build')) {
       new CopyWebpackPlugin([{
         from: __dirname + '/src/public'
       }]),
-      new ExtractTextPlugin('[name].[hash].css')
+      new ExtractTextPlugin('[name].[hash].css'),
+
+      new DocsGeneratorPlugin({
+        enable       : docEnable,
+        staticContent: './docs',
+        sources      : {
+          include : 'src/app/**/**/*.js',
+          basePath: 'src/app'
+        },
+        output       : 'dist-docs'
+      })
     ],
   });
 }

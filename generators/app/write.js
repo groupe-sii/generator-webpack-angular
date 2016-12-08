@@ -215,11 +215,6 @@ module.exports = {
       this.destinationPath('docs/index.ngdoc'),
       this.props
     );
-    this.fs.copyTpl(
-      this.templatePath('tools/docs-generator'),
-      this.destinationPath('tools/docs-generator'),
-      this.props
-    );
   },
 
   /**
