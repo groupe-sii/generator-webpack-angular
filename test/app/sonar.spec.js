@@ -44,6 +44,14 @@ module.exports = () => {
       assert.fileContent('sonar-project.properties', /sonar.projectName=Webpack Generator/);
     });
 
+    it('should generate the filepath-loader.js file', () => {
+      assert.file('filepath-loader.js');
+    });
+
+    it('should add filepath-loader in Webpack preLoaders', () => {
+      assert.fileContent('webpack.config.js', `loader: path.join(__dirname, 'filepath-loader.js')`);
+    });
+
     describe('when using CSS', () => {
 
       before(done => {

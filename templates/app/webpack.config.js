@@ -150,6 +150,16 @@ if (TARGET !== undefined && (TARGET === 'test' || TARGET === 'test-watch')) {
     devtool: 'inline-source-map',
 
     module: {
+<% if (sonarWebFrontendReporters) { -%>
+      preLoaders: [
+        // Add file path info in source code files
+        {
+          test: /\.spec\.js$/,
+          loader: path.join(__dirname, 'filepath-loader.js'),
+          include: path.resolve('test/unit')
+        }
+      ],
+<% } -%>
       loaders: [{
         test: /\.js$/,
         loaders: ['ng-annotate', 'babel?' + JSON.stringify({

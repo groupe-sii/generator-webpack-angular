@@ -185,6 +185,12 @@ module.exports = {
         this.destinationPath('sonar-project.properties'),
         this.props
       );
+
+      this.fs.copyTpl(
+        this.templatePath('filepath-loader.js'),
+        this.destinationPath('filepath-loader.js'),
+        this.props
+      );
     }
   },
 
