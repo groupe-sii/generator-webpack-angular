@@ -134,8 +134,8 @@ module.exports = class AppGenerator extends Base {
           default:
           case 'sass':
             this.fs.copyTpl(
-              this.templatePath('src/_.sass-lint.yml'),
-              this.destinationPath('src/.sass-lint.yml')
+              this.templatePath('_.sass-lint.yml'),
+              this.destinationPath('.sass-lint.yml')
             );
             break;
         }

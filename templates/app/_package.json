@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
 <% if (cssPreprocessor === 'sass') { -%>
-  "sasslintConfig": "src/.sass-lint.yml",
+  "sasslintConfig": ".sass-lint.yml",
 <% } -%>
   "scripts": {
     "build": "rimraf dist && webpack --bail --progress --profile --env dev",
