@@ -119,8 +119,8 @@ module.exports = class AppGenerator extends Base {
         );
 
         this.fs.copyTpl(
-          this.templatePath('src/_.eslintrc'),
-          this.destinationPath('src/.eslintrc')
+          this.templatePath('_.eslintrc'),
+          this.destinationPath('.eslintrc')
         );
 
         switch (this.props.cssPreprocessor) {
