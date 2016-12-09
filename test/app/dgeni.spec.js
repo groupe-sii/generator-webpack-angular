@@ -18,8 +18,8 @@ module.exports = () => {
         .then(() => done());
     });
 
-    it('should add dgeni to the package.json', () => {
-      assert.fileContent('package.json', /"node \.\/tools\/docs-generator\/index\.js"/);
+    it('should add webpack-angular-dgeni-plugin to the package.json', () => {
+      assert.fileContent('package.json', /"webpack-angular-dgeni-plugin"/);
     });
 
     it('should have default ngdocs files', () => {
