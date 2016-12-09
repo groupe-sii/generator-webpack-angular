@@ -1,5 +1,5 @@
 # Generator Webpack Angular
-[![Build Status](https://travis-ci.org/groupe-sii/generator-webpack-angular.svg?branch=develop)](https://travis-ci.org/groupe-sii/generator-webpack-angular)
+[![Build Status](https://travis-ci.org/groupe-sii/generator-webpack-angular.svg?branch=master)](https://travis-ci.org/groupe-sii/generator-webpack-angular)
 
 > Yeoman generator for building Single Page Apps with AngularJS, ES6, Webpack.
 
