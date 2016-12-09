@@ -1,0 +1,32 @@
+{
+  "projectName": "<%= appName %>",
+  "eslint": {
+    "src": "src/**/*.js",
+    "report": "reports/sonar/eslint.json",
+    "rulesFile": "src/.eslintrc"
+  },
+  "eslintangular": {
+    "src": "src/**/*.js",
+    "report": "reports/sonar/eslint-angular.json",
+    "rulesFile": "src/.eslintrc"
+  },
+  "htmlhint": {
+    "src": "src/**/*.html",
+    "report": "reports/sonar/htmlhint.json",
+    "rulesFile": "src/.htmlhintrc"
+  },
+<% if (cssPreprocessor === 'css') { -%>
+  "csslint": {
+    "src": "src/**/*.css",
+    "report": "reports/sonar/csslint.json",
+    "rulesFile": "src/.csslintrc"
+  }
+<% } -%>
+<% if (cssPreprocessor === 'sass') { -%>
+  "sass-to-scsslint": {
+    "src": "src/**/*.s+(a|c)ss",
+    "report": "reports/sonar/sass-to-scsslint.json",
+    "rulesFile": "src/.sass-lint.yml"
+  }
+<% } -%>
+}

@@ -1,0 +1,22 @@
+//----------------------------------------
+//  Material Design Icons
+//----------------------------------------
+
+.material-icons {
+  // sass-lint:disable no-vendor-prefixes
+  direction: ltr;
+  display: inline-block;
+  font-family: 'Material Icons';
+  font-feature-settings: 'liga'; // Support for IE
+  font-size: 24px;  // Preferred icon size
+  -moz-osx-font-smoothing: grayscale; // Support for Firefox
+  -webkit-font-smoothing: antialiased; // Support for all WebKit browsers
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: 1;
+  text-rendering: optimizeLegibility; // Support for Safari and Chrome
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+}
