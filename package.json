@@ -1,5 +1,5 @@
 {
-  "name": "@groupe-sii/generator-webpack-angular",
+  "name": "generator-webpack-angular",
   "version": "0.0.1",
   "description": "Yeoman generator for creating AngularJS apps with Webpack",
   "keywords": [
