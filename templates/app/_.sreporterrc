@@ -3,12 +3,12 @@
   "eslint": {
     "src": "src/**/*.js",
     "report": "reports/sonar/eslint.json",
-    "rulesFile": "src/.eslintrc"
+    "rulesFile": ".eslintrc"
   },
   "eslintangular": {
     "src": "src/**/*.js",
     "report": "reports/sonar/eslint-angular.json",
-    "rulesFile": "src/.eslintrc"
+    "rulesFile": ".eslintrc"
   },
   "htmlhint": {
     "src": "src/**/*.html",
@@ -26,7 +26,7 @@
   "sass-to-scsslint": {
     "src": "src/**/*.s+(a|c)ss",
     "report": "reports/sonar/sass-to-scsslint.json",
-    "rulesFile": "src/.sass-lint.yml"
+    "rulesFile": ".sass-lint.yml"
   }
 <% } -%>
 }
