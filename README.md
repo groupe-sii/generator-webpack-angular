@@ -52,7 +52,7 @@ $ npm install -g yo
 #### Install `generator-webpack-angular`:
 
 ```sh
-$ npm install @groupe-sii/generator-webpack-angular
+$ npm install generator-webpack-angular
 ```
 
 ### Run
@@ -63,10 +63,10 @@ $ npm install @groupe-sii/generator-webpack-angular
 $ mkdir my-new-project && cd my-new-project
 ```
 
-#### Run `yo @groupe-sii/webpack-angular`, and select desired technologies:
+#### Run `yo webpack-angular`, and select desired technologies:
 
 ```sh
-$ yo @groupe-sii/webpack-angular
+$ yo webpack-angular
 ```
 
 #### Use NPM scripts
