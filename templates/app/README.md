@@ -6,10 +6,11 @@
 1. [Installation](#installation)
 1. [Scripts](#scripts)
 1. [Contribute - Git](#contribute-git)
+1. [Configuration](#configuration)
+1. [Documentation](#documentation)
 <% if (cssPreprocessor === 'sass' || cssPreprocessor === 'less') { -%>
 1. [Styling](#styling)
 <% } -%>
-4. [Tests](#tests)
 
 ## Prerequisites
 
@@ -54,39 +55,29 @@ See [commits convention](COMMITS-CONVENTION.md).
 
 See [configuration documentation](src/config/README.md).
 
-<% if (cssPreprocessor === 'sass' || cssPreprocessor === 'less') { -%>
-## Docs generator
+## Documentation
 
 Angular documentation is generated with [DGeni](https://github.com/angular/dgeni)
 
 Docs generation is performed by [webpack-angular-dgeni-plugin](https://github.com/groupe-sii/webpack-angular-dgeni-plugin/)
 
-Please refer to [Angular documentation](https://github.com/angular/angular.js/wiki/Writing-AngularJS-Documentation) for doc's comments generation.
+Please refer to [Angular documentation](https://github.com/angular/angular.js/wiki/Writing-AngularJS-Documentation) for documentation comments.
 
 ### Configuration
 
-It's possible to include or exclude other glob link (default: `./src/app/**/*`) in file `./webpack.config.js` in `build` target.
+It's possible to include or exclude other glob link (default: `src/app/**/*`) in file `webpack.config.js` in `build` target.
 
-You can also configure generation path with `output` variable under `.webpack.config.js`
+For more details about configuration, please refer to the [plugin documentation](https://github.com/groupe-sii/webpack-angular-dgeni-plugin).
 
-Example : 
+### Launch
 
-```js
-new DocsGeneratorPlugin({
-        enable       : docEnable,
-        staticContent: './docs',
-        sources      : {
-          include : 'src/app/**/**/*.js',
-          basePath: 'src/app'
-        },
-        output       : 'dist-docs'
-      })
-```
+Documentation is launched by adding `--docs` argument to webpack. Which is already done by default for `build` and `build:prod` NPM scripts.
 
-###Static documentation
+### Static documentation
 
-Static documentation is written in markdown format under `./docs`
+Static documentation is written in markdown format under `docs` folder.
 
+<% if (cssPreprocessor === 'sass' || cssPreprocessor === 'less') { -%>
 ## Styling
 
 See styling [guidelines](src/styles/README.md).
