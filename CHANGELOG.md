@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased]
+## 0.0.1
 
 ### Added
 
@@ -21,10 +21,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - **sonar**: Generate linters reporters for the [SonarQube](https://github.com/groupe-sii/sonar-web-frontend-plugin) plugin from [@vgo]
 - **json-server**: Allows you to easily create a RESTFull API for your application from [@ole]
 - **application name**: Let's you choose the name of your application from [@ole]
+- **documentation**: Generate documentation with dgeni from [@ole]
+- **tests**: Create unit tests with Karma from [@jledentu]
 
 [@aguele]: https://github.com/aguele
 [@jledentu]: https://github.com/jledentu
 [@ole]: https://github.com/liollury
 [@vgo]: https://github.com/ValentinGot
-
-[Unreleased]: https://github.com/groupe-sii/generator-webpack-angular/tree/develop
