@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Fixed
 
 - Path to rules files from `.sreporterrc` were not good from [@ValentinGot]
+- Path to tests folder were not good from [@ValentinGot]
 
 ## 0.0.3
 
