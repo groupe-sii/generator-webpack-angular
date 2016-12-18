@@ -1,1 +1,7 @@
 !._*
+
+test/
+docs/
+assets/
+
+yarn.lock
