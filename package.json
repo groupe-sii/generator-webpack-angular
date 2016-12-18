@@ -14,9 +14,6 @@
     "Valentin Got <gotvalentin@gmail.com>",
     "Olivier Le Lay <liollury@gmail.com>"
   ],
-  "files": [
-    "generators/app"
-  ],
   "main": "generators/app/index.js",
   "repository": {
     "type": "git",
