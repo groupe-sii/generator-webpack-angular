@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## Unreleased
 
+## 0.0.4 - 2016-12-18
+
 ### Fixed
 
 - **sonar**: path to rules files from `.sreporterrc` were not good from [@ValentinGot]
