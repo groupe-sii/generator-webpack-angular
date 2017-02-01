@@ -35,7 +35,7 @@
     "angular-cookies": "^1.6.0",
 <% } -%>
 <% if (uiFramework === 'ngMaterial') { -%>
-    "angular-material": "^1.1.1",
+    "angular-material": "^1.1.2",
 <% } -%>
 <% if (ngMessages) { -%>
     "angular-messages": "^1.6.0",
