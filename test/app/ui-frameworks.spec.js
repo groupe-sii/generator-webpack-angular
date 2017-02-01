@@ -25,6 +25,7 @@ module.exports = () => {
     it('should import angular-material in the angular modules', () => {
       assert.fileContent('src/app/app.js', 'import ngMaterial from \'angular-material\'');
       assert.fileContent('src/app/app.js', 'import \'angular-material/angular-material.css\'');
+      assert.fileContent('src/app/app.js', 'import \'material-design-icons/iconfont/material-icons.css\'');
       assert.fileContent('src/app/app.js', /angular\.module\([\s\S]*, [\s\S]*?ngMaterial/);
     });
 
