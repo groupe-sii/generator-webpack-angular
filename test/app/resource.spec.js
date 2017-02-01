@@ -23,7 +23,6 @@ module.exports = () => {
     });
 
     it('should import restangular in the angular modules', () => {
-      assert.fileContent('src/app/app.js', 'import \'lodash\'');
       assert.fileContent('src/app/app.js', 'import \'restangular\'');
       assert.fileContent('src/app/app.js', /angular\.module\([\s\S]*, [\s\S]*?restangular/);
     });
