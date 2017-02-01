@@ -48,7 +48,6 @@
     "no-useless-escape": "error",
     "no-void": "error",
     "no-with": "error",
-    "radix": "error",
     "no-label-var": "error",
     "no-shadow-restricted-names": "error",
     "no-undef-init": "error",
@@ -63,12 +62,7 @@
     "comma-style": "error",
     "func-call-spacing": ["error", "never"],
     "func-names": ["error", "never"],
-    "indent": ["error", 2, {
-      "SwitchCase": 1
-    }],
-    "key-spacing": ["error", {
-      "align": "colon"
-    }],
+    "indent": ["error", 2, {"SwitchCase": 1}],
     "keyword-spacing": "error",
     "linebreak-style": ["error", "unix"],
     "max-depth": "warn",
