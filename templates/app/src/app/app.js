@@ -31,7 +31,6 @@ import uiRouter from 'angular-ui-router';
 import ngResource from 'angular-resource';
 <% } -%>
 <% if (resource === 'restangular') { -%>
-import 'lodash';
 import 'restangular';
 <% } -%>
 
