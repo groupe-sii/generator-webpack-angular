@@ -34,18 +34,18 @@ import ngResource from 'angular-resource';
 import 'restangular';
 <% } -%>
 
+<% if (uiFramework === 'ngMaterial') { -%>
+import 'angular-material/angular-material.css';
+<% } -%>
+<% if (uiFramework === 'bootstrap') { -%>
+import 'bootstrap/dist/css/bootstrap.min.css';
+<% } -%>
 <% if (cssPreprocessor === 'sass') { -%>
 import '../styles/main.scss';
 <% } else if (cssPreprocessor === 'less') { -%>
 import '../styles/main.less';
 <% } else { -%>
 import '../styles/main.css';
-<% } -%>
-<% if (uiFramework === 'ngMaterial') { -%>
-import 'angular-material/angular-material.css';
-<% } -%>
-<% if (uiFramework === 'bootstrap') { -%>
-import 'bootstrap/dist/css/bootstrap.min.css';
 <% } -%>
 
 import config from 'app.config';
