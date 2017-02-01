@@ -6,13 +6,14 @@
   "sasslintConfig": ".sass-lint.yml",
 <% } -%>
   "scripts": {
+    "start": "npm-run-all --parallel serve<% if (jsonServer) { -%> json-server<% } -%>",
+    "serve": "webpack-dev-server --history-api-fallback --inline --progress --hot --host 0.0.0.0 --env dev",
+    "serve:https": "webpack-dev-server --https --history-api-fallback --inline --progress --hot --host 0.0.0.0 --env dev",
+    "serve:prod": "webpack-dev-server --history-api-fallback --inline --progress --hot --env prod",
     "build": "rimraf dist && webpack --bail --progress --profile --docs --env dev",
     "build:prod": "rimraf dist && webpack --bail --progress --profile --docs --env prod",
-    "start": "npm-run-all --parallel serve<% if (jsonServer) { -%> json-server<% } -%>",
-    "serve": "webpack-dev-server --history-api-fallback --inline --progress --hot --env dev",
-    "serve:prod": "webpack-dev-server --history-api-fallback --inline --progress --hot --env prod",
     "test": "npm run lint && karma start",
-    "test-watch": "karma start --auto-watch --no-single-run",
+    "test:watch": "karma start --auto-watch --no-single-run",
     "lint": "eslint src/ && htmlhint src/<% if (cssPreprocessor === 'css') { -%> && csslint src/styles/<% } else if (cssPreprocessor === 'sass') { -%> && sass-lint -v<% } -%>"<% if (sonarWebFrontendReporters || jsonServer) { -%>,
 <% } -%>
 <% if (sonarWebFrontendReporters) { -%>
