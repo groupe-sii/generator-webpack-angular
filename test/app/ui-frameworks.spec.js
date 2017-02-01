@@ -57,13 +57,6 @@ module.exports = () => {
           .then(() => done());
       });
 
-      it('should add material-design-icons', () => {
-        assert.file('src/styles/base/_typography.scss');
-        assert.file('src/styles/vendors/_material-icons.scss');
-        assert.fileContent('src/styles/main.scss', '@import \'vendors/material-icons\'');
-        assert.fileContent('src/styles/main.scss', '@import \'base/typography\'');
-      });
-
     });
 
     describe('when using Less', () => {
@@ -77,13 +70,6 @@ module.exports = () => {
           })
           .toPromise()
           .then(() => done());
-      });
-
-      it('should add material-design-icons', () => {
-        assert.file('src/styles/base/_typography.less');
-        assert.file('src/styles/vendors/_material-icons.less');
-        assert.fileContent('src/styles/main.less', '@import \'vendors/material-icons\'');
-        assert.fileContent('src/styles/main.less', '@import \'base/typography\'');
       });
 
     });
