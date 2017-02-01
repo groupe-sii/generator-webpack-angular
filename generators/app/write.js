@@ -119,44 +119,6 @@ module.exports = {
   },
 
   /**
-   * Write ui frameworks related files
-   */
-  ui () {
-    switch (this.props.uiFramework) {
-      case 'ngMaterial':
-        switch (this.props.cssPreprocessor) {
-          case 'css':
-          default:
-            this.fs.copyTpl(
-              this.templatePath('src/ui-angular-material/styles'),
-              this.destinationPath('src/styles')
-            );
-            break;
-
-          case 'sass':
-            this.fs.copyTpl(
-              this.templatePath('src/ui-angular-material/styles-sass'),
-              this.destinationPath('src/styles'),
-              this.props
-            );
-            break;
-
-          case 'less':
-            this.fs.copyTpl(
-              this.templatePath('src/ui-angular-material/styles-less'),
-              this.destinationPath('src/styles'),
-              this.props
-            );
-            break;
-        }
-        break;
-
-      default:
-        break;
-    }
-  },
-
-  /**
    * Write angular-translate locales
    */
   angularTranslate () {

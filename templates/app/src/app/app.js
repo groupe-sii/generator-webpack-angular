@@ -36,6 +36,7 @@ import 'restangular';
 
 <% if (uiFramework === 'ngMaterial') { -%>
 import 'angular-material/angular-material.css';
+import 'material-design-icons/iconfont/material-icons.css';
 <% } -%>
 <% if (uiFramework === 'bootstrap') { -%>
 import 'bootstrap/dist/css/bootstrap.min.css';
