@@ -29,27 +29,49 @@ let common = {
 
   module: {
     preLoaders: [],
-    loaders: [{
-      test: /\.js$/,
-      loaders: ['ng-annotate', 'babel'],
-      exclude: /node_modules/
-    },
-    {
-      test: /\.html$/,
-      loader: 'raw'
-    },
-    {
-      test: /\.css$/,
-      loaders: [ 'style-loader', 'css-loader?importLoaders=1', 'postcss-loader' ]
-    },
-    {
-      test: /\.json$/,
-      loader: 'json'
-    },
-    {
-      test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
-      loader: 'file'
-    }]
+    loaders: [
+      {
+        test: /\.js$/,
+        loaders: ['ng-annotate', 'babel'],
+        exclude: /node_modules/
+      },
+      {
+        test: /\.html$/,
+        loader: 'raw'
+      },
+      {
+        test: /\.css$/,
+        loaders: [ 'style-loader', 'css-loader?importLoaders=1', 'postcss-loader' ]
+      },
+      {
+        test: /\.json$/,
+        loader: 'json'
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif)$/,
+        loader: `url-loader?limit=8192`
+      },
+      {
+        test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url?limit=10000&minetype=application/font-woff'
+      },
+      {
+        test: /\.woff2$/,
+        loader: 'url?limit=10000&minetype=application/font-woff'
+      },
+      {
+        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url?limit=10000&minetype=application/octet-stream'
+      },
+      {
+        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'file'
+      },
+      {
+        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url?limit=10000&minetype=image/svg+xml'
+      }
+    ]
   },
 
   plugins: [
