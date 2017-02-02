@@ -6,6 +6,27 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## Unreleased
 
+### Added
+
+- **package.json**: new script (**server:https**) to launch the development server in HTTPs mode from [@liollury]
+
+### Changed
+
+- **package.json**: upgrade AngularJS packages version to 1.6.1 from [@ValentinGot]
+- **package.json**: upgrade Babel packages version (babel-core, babel-loader, babel-plugin-istanbul, babel-preset-es2015) from [@ValentinGot]
+- **package.json**: upgrade Karma packages version (karma, karma-webpack) from [@ValentinGot]
+- **package.json**: upgrade angular-material version to 1.1.2 from [@liollury]
+- **package.json**: upgrade some miscellaneous packages (angular-ui-router, eslint, eslint-plugin-angular, html-webpack-plugin, node-sass, postcss-loader, sass-loader, sonar-web-frontend-reporters, webpack-dev-server) from [@ValentinGot]
+- **webpack**: use URL loader for png, jpg, gif, woff, woff2, ttf and svg file types from [@ValentinGot]
+
+### Fixed
+
+- **eslint**: update some rules ESLint rules. indent/SwitchCase (wrong indents), radix, key-spacing from [@liollury]
+- **resource**: upgrade Restangular version and remove lodash import (Closes [#4](https://github.com/groupe-sii/generator-webpack-angular/issues/4)) from [@ValentinGot]
+- **ui-frameworks**: import CSS frameworks before project styles to avoid style overrides from [@ValentinGot]
+- **material-design-icons**: import CSS directly from NPM package (Closes [#5](https://github.com/groupe-sii/generator-webpack-angular/issues/5)) from [@ValentinGot]
+- **webpack**: use `cheap-module-source-map` devtool value for source maps form [@ValentinGot]
+
 ## 0.0.4 - 2016-12-18
 
 ### Fixed
@@ -41,14 +62,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - **linting**: Add ESLint, HTMLHint, SCSSLint & CSSLint support from [@ValentinGot]
 - **package-manager**: Let's you choose between **npm** or **Yarn** package manager from [@ValentinGot]
 - **postcss**: Add PostCSS treatments from [@ValentinGot]
-- **debug**: Disable the [debug info](https://docs.angularjs.org/api/ng/provider/$compileProvider#debugInfoEnabled) in production environement from [@ole]
+- **debug**: Disable the [debug info](https://docs.angularjs.org/api/ng/provider/$compileProvider#debugInfoEnabled) in production environement from [@liollury]
 - **sonar**: Generate linters reporters for the [SonarQube](https://github.com/groupe-sii/sonar-web-frontend-plugin) plugin from [@ValentinGot]
-- **json-server**: Allows you to easily create a RESTFull API for your application from [@ole]
-- **application name**: Let's you choose the name of your application from [@ole]
-- **documentation**: Generate documentation with dgeni from [@ole]
+- **json-server**: Allows you to easily create a RESTFull API for your application from [@liollury]
+- **application name**: Let's you choose the name of your application from [@liollury]
+- **documentation**: Generate documentation with dgeni from [@liollury]
 - **tests**: Create unit tests with Karma from [@jledentu]
 
 [@aguele]: https://github.com/aguele
 [@jledentu]: https://github.com/jledentu
-[@ole]: https://github.com/liollury
+[@liollury]: https://github.com/liollury
 [@ValentinGot]: https://github.com/ValentinGot
