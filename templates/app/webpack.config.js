@@ -101,7 +101,7 @@ if (TARGET !== undefined && TARGET.startsWith('serve')) {
         loaders: [ 'style-loader', 'css-loader?importLoaders=1', 'postcss-loader' ]
       }<% } %>]
     },
-    devtool: 'cheap-module-eval-source-map'
+    devtool: 'cheap-module-source-map'
   });
 }
 
