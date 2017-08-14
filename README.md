@@ -7,6 +7,8 @@
 
 > Yeoman generator for building Single Page Apps with AngularJS, ES6, Webpack.
 
+### This project is no longer maintained. Please use [Clea CLI](https://github.com/groupe-sii/clea-cli) instead, which is way more complete.
+
 ## Generator
 
 What's included in details over [here](docs/STACK.md)
